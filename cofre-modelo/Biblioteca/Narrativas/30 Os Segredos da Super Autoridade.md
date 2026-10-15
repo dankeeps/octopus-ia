@@ -1,0 +1,78 @@
+---
+tipo: "narrativa"
+numero: 30
+grupo: "Prova e caso"
+origem: "método de referência"
+aliases: ["Os Segredos da Super Autoridade", "Template 30"]
+---
+
+# Os Segredos da Super Autoridade — Template 30
+
+## A ideia
+
+Basicamente, esse formato de copy usa o gatilho da autoridade de uma figura influente do seu nicho de mercado, para captar a atenção da sua audiência.
+
+## Estrutura
+
+- Fulano fazia isso para ter esse resultado
+- Fazer uma introdução ao fulano
+- Contar o que ele fazia e quais resultados ele tinha
+- CTA
+
+## Exemplo
+
+*Anúncios reais das bibliotecas estudadas (9 anúncios em 3 ofertas: Oferta A, Oferta D, Oferta C). Um exemplo por roteiro; quando o mesmo roteiro aparece com outros ganchos, os ganchos ficam listados embaixo dele. Substituiu o exemplo do e-book em 29/09/2026.*
+
+### Oferta C — Expert C · Anúncio 01
+**Formato:** falando para a câmera, abre com pergunta de seguidor · **Por que é esta narrativa:** Depois do ciclo hormonal, 'se dinheiro comprasse shape, o Elon Musk…', Bale e Hugh Jackman levam ao 'código de bastidores de Hollywood', um ritual matinal de 15 minutos.
+
+> Como perder 10 quilos de barriga em 30 dias depois dos 40 ou 50 anos? [expert], preciso perder a barriga em 2 meses, o que que eu faço? Tenho 49 anos. 2 meses? Você precisa de muito menos do que isso. Você só precisa de 6 semanas pra eliminar até 8 quilos de barriga, principalmente aquela gordura mais funda, a visceral. E não é sobre perder peso não, tá? É sobre perder barriga. Sabe aquela pança que fica pra frente, que fica em cima do short, sabe? Então, tudo isso é sobre o que acontece depois dos 40, que é uma transição metabólica que derruba a sua testosterona e ativa o ciclo hormonal da barriga. Mais barriga, mais estrogênio, menos testosterona, mais barriga. E se você tenta resolver com cardio longo, com dieta restritiva, com treino exaustivo, você só piora esse ciclo. Quer perder barriga? Quer voltar a se sentir bem com o seu próprio corpo, com autoestima elevada? Então olha aqui, para de ficar fazendo abdominal se você quiser perder a barriga depois dos 40 anos, porque se dinheiro comprasse shape, o Elon Musk não teria essa barriga de grávida nas fotos do iate que viralizaram na internet. Se fosse só genética, o Christian Bale não conseguiria ganhar 30 quilos de barriga para um papel e meses depois estar com o abdômen trincado interpretando Batman. E se fosse questão de idade, o Hugh Jackman não estaria aos 55 anos com o corpo do Wolverine humilhando um moleque de 20 anos na academia. A verdade é que existe um código de bastidores, uma trapaça metabólica que circula todos os estúdios de Hollywood há anos. Eles não passam três horas na academia, eles não vivem à base de frango com batata doce, eles utilizam um ritual matinal de 15 minutos. Um ritual projetado para obrigar o seu corpo a queimar a gordura da barriga como o seu combustível primário, enquanto preserva e aumenta até a sua massa muscular. Funciona mesmo depois dos 40, 50 anos, quando todo mundo diz que é normal engordar com a idade e ficar com a testosterona baixa. Eu descobri esse ritual, eu roubei esse segredo de Hollywood, adaptei ele, turbinei pra nossa realidade brasileira. E hoje eu vou entregar ele pra você. Se você é um homem acima dos 40 anos e sente que o seu metabolismo travou, se você tem aquela barriga dura e não sai nem por reza braba, Se você se sente cansado, sem energia e percebeu que o seu vigor sexual não é mais o mesmo, presta muita atenção porque existe um ciclo invisível acontecendo dentro de você agora mesmo. Um ciclo que está transformando a sua testosterona em hormônio feminino, travando a sua queima de gordura. E o pior, quanto mais você tenta perder barriga do jeito tradicional, fazendo corrida, dieta, abdominal, mais você alimenta esse ciclo. Fica comigo até o fim desse vídeo, porque eu vou te mostrar por que que abdominais e corridas estão, na verdade, aumentando a sua barriga, o que é o ciclo da barriga hormonal, que atinge 99% dos homens depois dos 40, e o passo a passo do ritual matinal de 15 minutos, que fez homens comuns, como eu e você, perderem até 10 quilos de barriga em 21 dias, sem passar fome, sem viver na academia e sem abrir mão da cerveja no final de semana. Parece bom demais pra ser verdade? Eu também achava. Até ver isso acontecer.
+
+**O mesmo roteiro em mais 2 anúncios, com estes ganchos:**
+
+- Anúncios 12, 46: (mesmo gancho do exemplo acima)
+
+### Oferta C — Expert C · Anúncio 68
+**Formato:** falando para a câmera com imagens de famosos · **Por que é esta narrativa:** 'O Thor tem 42 anos e olha o shape': os atores de Hollywood usam a trapaça metabólica de 15 min, e ele 'roubou' a estratégia.
+
+> E aí, vocês lembram dele? O Thor do Universo Marvel tá com 42 anos e olha só o shape dele. Não só ele, mas vários atores de Hollywood com 40, 50, até 60 anos que impressionam com um shape absurdo. A maioria das pessoas acham que é porque eles têm grana, porque eles são ricos, mas na verdade o motivo é outro. E eu descobri isso e eu roubei essa mesma estratégia que eles utilizam quando eu descobri que não tem nada a ver com academia, com treino longo, com dieta restritiva. Eles usam uma trapaça metabólica de 15 minutos Que permite ativar os hormônios que são responsáveis por obrigar o nosso metabolismo a queimar a barriga Foi com isso que eu consegui o meu melhor shape aos 46 anos E com esse truque que milhares de caras comuns conseguiram eliminar em média 10 quilos de barriga em 21 dias E sabe por que funciona tão bem? Porque o nosso corpo e o nosso metabolismo depois dos 40, 50 anos Ele entra num bloqueio metabólico Que faz acumular gordura E dificulta o ganho de massa muscular Mas esses atores aqui Aplicam essa trapaça metabólica E destravam esse bloqueio Por isso que eles conseguem aparecer no shape Quando vão fazer um filme E pra te ajudar a aplicar isso a partir de hoje Eu gravei uma curta apresentação E eu tô liberando ela de forma gratuita Até a meia-noite de hoje Então se você quer saber como aplicar Essa trapaça metabólica de 15 minutos Pra queimar a barriga Sem ter que largar a cerveja e o churrasco Clica no link aqui embaixo para assistir enquanto ainda está de graça. Assiste, faz e depois volta aqui para me dizer o quanto você perdeu na primeira semana.
+
+**O mesmo roteiro em mais 1 anúncio, com estes ganchos:**
+
+- Anúncio 117: (mesmo gancho do exemplo acima)
+
+### Oferta A — Expert A · Anúncio 162
+**Formato:** calistenia · trecho de entrevista com narração do expert · **Por que é esta narrativa:** 'O Ramon Dino não começou em academia, mas fazendo calistenia' e daí o método do desafio.
+
+> O Ramon Dino, o maior fisiculturista do Brasil e melhor do mundo atualmente, ele não começou fazendo musculação em academias de elite, mas sim fazendo calistenia. Escuta só. Sabia que o Ramon já tinha um físico expressivo fazendo apenas calistenia? Ele começou na calistenia? Ele começou na calistenia. Ele foi descoberto pelo seu primeiro treinador numa praça, fazendo barra fixa. O cara olhou pra ele e falou assim, você sabia que você pode ser um grande fisiculturista? Você tem genética e proporção pra isso? Que legal. E aí ele falou, é mesmo, é. E o cara começou a trabalhar e ele levou ele pra academia de musculação. É perfeitamente possível você construir um físico bonito e expressivo Utilizando apenas o peso do seu próprio corpo Utilizando barras paralelas, barra fixa, flexões, abdominais Entre os exercícios O que você precisa é de técnica O Ramon tinha, o Ramon tinha alimentação básica do básico do básico Por conta da família ser uma família carente em recurso E ele tinha a praça É isso Ele não fez o vitilismo Ele foi com o que tinha Pouca gente sabe disso, mas o Ramon Dino conseguiu construir um corpo totalmente forte e estético antes mesmo de pisar em uma academia A verdade é que antes dos personagens trainers, antes dos pesos, das academias e das máquinas caras, veio o domínio do seu próprio corpo Porque um shape forte e estético não vende aparelhos caros, mas sim de um método inteligente Que trabalha vários músculos do seu corpo ao mesmo tempo com alta intensidade, fazendo com que você construa uma força de verdade desde a base É exatamente por isso que a calistenia sempre foi o ponto de partida pra quem leva o corpo e o treinamento a sério Treino simples, direto da sua casa, sem equipamentos e sem perda de tempo Com apenas 15 minutinhos por dia, esse treino pode ser mais eficiente do que passar uma hora na academia fazendo treinos genéricos ou pensando no que fazer. Principalmente pra quem tá iniciando agora. Na primeira semana você já sente mais disposição. Na segunda começa a notar a diferença no espelho. E da terceira semana em diante começam os elogios. Foi justamente pensando nisso que criamos o desafio 28 dias de calistenia. Feitos para homens comuns perderem gordura e construindo um corpo forte e estético e de forma inteligente. Perfeito pra quem tem aquela rotina corrida ou tá cansado de não ter resultado e patinar e andar em círculos. Antes de iniciar, você só precisa preencher um quiz rápido de apenas 2 minutinhos pra gente ver a sua situação e seu objetivo atual. Clique em algum lugar dessa tela, faça o quiz rápido e comece hoje mesmo o primeiro dia do Desafio 28 Dias de calistenia comigo, pra gente junto construir um corpo forte e estético sem depender de academias caras. Clica no link, te espero lá.
+
+### Oferta A — Expert A · Anúncio 174
+**Formato:** Kegel · expert falando para a câmera · **Por que é esta narrativa:** 'Truque da contração usado pelos atores 18+', 'descoberto em 1949' e silenciado pela indústria farmacêutica.
+
+> Esse truque da contração de 7 minutos usado pelos atores 18+, faz a ferramenta ficar dura igual aço por mais de 30 minutos. Calma aí, tadalafilo, não tem nada a ver com remédio, consultas constrangedoras, hipnose pra fazer sua cobra subir ou mata peruana. Esse truque americano foi descoberto em 1949 e desde então a indústria farmacêutica vem silenciando quem fala sobre isso no Brasil. Eu mesmo já postei um vídeo e derrubaram. É um exercício de musculação íntima que fortalece o amigão em 21 dias. Quando você consegue contrair do jeito certo lá embaixo, segura mais sangue e consegue manter mais firme por mais tempo. Como se fosse uma mangueira de bombeio. Você pode sair disso pra isso em menos de um mês. Quem já me segue há um tempo deve ter escutado eu prometer que quando a gente batesse 3 milhões de seguidores, eu ia liberar uma aula ensinando o truque da contração de 7 minutos. O link do prazer tá aqui embaixo. Depois dessa aula, você vai dar o prazer que a sua parceira merece. Aproveitar muito mais com ela na cama e testar várias posições novas. O único problema é que da última vez que eu liberei essa aula, aquela rede farmacêutica derrubou ela em 24 horas. Então se eu fosse você, eu clicaria no link agora mesmo, assistiria essa aula. Mas uma dica, assiste ela sozinho com um fonezinho de ouvido porque o clima pode sentar. E daqui a 21 dias você volta pra falar comigo com a tua parceira muito mais feliz.
+
+### Oferta A — Expert A · Anúncio 189
+**Formato:** Kegel · fala do expert com narração histórica · **Por que é esta narrativa:** 'Atores 18+ começaram a usar em 1949 um truque da contração' e apresenta o Dr. Kegel antes da aula.
+
+> Atores 18 mais começaram a usar, em 1949, um truque da contração de 7 minutos para durar horas, firme na cama. Antes, as pílulas endurecedoras tinham muito mais colaterais e eram muito mais perigosas. Hoje, elas já têm muito colateral, mas imagina antes. Um ator galudão durava 10 minutos de meteção, e por incrível que pareça, isso já era muito tempo na época. Só que em 1949, o Dr. Arnold Kegel descobriu um exercício de musculação íntima que fortalecia o seu amigão em 21 dias. Eu chamo isso de truque da contração. Você faz no chão da sua casa durante 7 minutos, sem equipamentos, sem pilas e sem colaterais. Na primeira semana, você já sente ele latejando diferente. Na segunda, ele fica mais firme e durando muito mais. Na terceira, meu amigo, você começa a dar o prazer que sua parceira merece É mais de 30 minutos sem tirar de dentro Em comemoração aos nossos 3 milhões de seguidores Eu estou liberando uma aula gratuita ensinando o truque da contração O link tá aqui embaixo Eu recomendo assistir de fone de ouvido sozinho no quarto ou no banheiro Porque o clima pode esquentar Então corre lá, porque essa aula só vai ficar liberada por 48 horas Enquanto estamos no clima de comemoração Da última vez, derrubaram o meu vídeo corre, assiste e depois você volta aqui pra me agradecer.
+
+### Oferta D — Expert D · Anúncio 14
+**Formato:** fala para a câmera com imagens do ator · **Por que é esta narrativa:** 'Não foram os anabolizantes que fizeram o Tom Holland chegar nesse shape, mas dois fatores'; revela o que ele faz (shape trincado, sem ficha ABCDE) e liga isso ao treino trinca.
+
+> Não foram os anabolizantes que fizeram o ator Tom Holland chegar nesse shape pra atuar no filme Homem-Aranha, que tá todo mundo comentando. Mas foram dois fatores muito simples que talvez ninguém imagina. Primeiro, ele não tem aquele shape gigante com quilos e quilos de músculos. Ele construiu um shape forte e trincado. Ou seja, ele fez um treino que possibilitou ganhar músculos ao mesmo tempo em que queima gordura. Deixando ele com ombros largos, peitoral definido, costas trabalhadas e a cintura um pouco mais fina, com o abdômen levemente trabalhado, mas nada de exagero. Segundo, ele não faz aquele treino de 3 séries de 12 de fichas A, B, C, D, E que passam pra todo mundo nas academias. Eu mesmo treinei por anos, mas só consegui um físico trincado quando eu apliquei a metodologia de treino trinca. De comecei a estimular cada grupo muscular de 2 a 3 vezes por semana. E esse estudo recente aqui e vários outros já comprovaram que pra pessoas naturais, o ideal é que você estimule cada grupo muscular de 2 a 3 vezes por semana. E eu não tô aqui pra te criticar ou falar que você faz errado, mas ao invés de fazer aquelas fichas de A, B, C, D, E que passam pra todo mundo na academia, faz muito mais sentido você fazer o treino trinca. A metodologia americana de treino que empresários de alta performance e famosos usam pra chegar num físico que 90% dos homens não tem. E isso só treinando de 3 a 4 vezes na semana. Inclusive, essa é a mesma metodologia que eu já apliquei com celebridades aqui no Brasil, tipo Léo Santana, Thiago Finch, Enaldinho. Com esse treino, eu te garanto que em um mês você tem muito mais resultado do que 6 meses dessas fichas genéricas que passam por aí. Bom, pelo menos esse é o tipo de direct que eu recebo todos os dias depois que eu soltei o desafio Oferta D. Olha só o Marcelo. Tem mais de 40 anos, se esforçou todos os dias por 2 anos na academia e na frente do espelho? Nem parecia que treinava. Olha só, o cara perdeu os pneus, a barriga, tá com o melhor shape da vida que depois dos 40 anos, hein? E você deve estar se perguntando, [expert], como é que eu faço pra participar? É muito caro? E não, não é nada. O valor é simbólico e pra participar é muito simples. Clique em Saiba Mais que tem uma turma começando agora. Mas aproveita que já tá encerrando as vagas nesse valor promocional. Então, clique em Saiba Mais e vamos começar.
+
+## Inteligência acumulada
+
+*Escrita pela skill com 3 ou mais referências de anúncio nesta narrativa. Até lá, vazia.*
+
+## Big ideas que ela carrega
+
+_As notas ligadas a esta aparecem nas ligações dela, no Cérebro do Octopus IA._
+
+## No swipe
+
+_As notas ligadas a esta aparecem nas ligações dela, no Cérebro do Octopus IA._
+
+## Anúncios com esta narrativa
+
+_As notas ligadas a esta aparecem nas ligações dela, no Cérebro do Octopus IA._

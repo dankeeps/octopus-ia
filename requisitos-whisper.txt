@@ -1,0 +1,4 @@
+faster-whisper==1.2.1
+av==18.1.0
+yt-dlp>=2025.11.12
+imageio-ffmpeg>=0.6.0

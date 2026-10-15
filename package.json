@@ -1,0 +1,14 @@
+{
+  "name": "octopus-ia",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Octopus IA: sistema de IA para direct response (VSL, criativos e pesquisa de mercado).",
+  "scripts": {
+    "instalar": "python instalar.py",
+    "spy:instalar": "node spy/instalar.mjs"
+  },
+  "dependencies": {
+    "playwright": "1.63.0"
+  }
+}
