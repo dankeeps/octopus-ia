@@ -1,5 +1,8 @@
 # O que mudou
 
+## 1.0.4
+- Login do ChatGPT: o Codex agora recebe o proxy e os certificados da rede do computador (empresa, VPN, antivírus). Isso resolve o erro "token_exchange_failed" ao entrar com a conta.
+
 ## 1.0.3
 - Os formatos da Biblioteca ganharam nomes novos e ficaram protegidos: aparecem com cadeado no Cérebro e os agentes continuam usando todos eles para escrever.
 - A Biblioteca não tem mais nenhum link.

@@ -71,7 +71,11 @@ class Codex:
             if os.name == "nt":                      # no Windows o Codex (via node) precisa do ambiente inteiro: SYSTEMROOT, USERPROFILE, APPDATA…
                 env = dict(os.environ)
             else:
-                env = {k: os.environ[k] for k in ("PATH", "HOME", "TMPDIR", "LANG", "LC_ALL", "SHELL") if k in os.environ}
+                # proxy e certificados da rede da pessoa (empresa, antivírus, VPN): sem eles o login no ChatGPT
+                # falha em "token_exchange_failed: error sending request for url (https://auth.openai.com/oauth/token)"
+                rede = ("HTTPS_PROXY", "https_proxy", "HTTP_PROXY", "http_proxy", "ALL_PROXY", "all_proxy", "NO_PROXY", "no_proxy",
+                        "SSL_CERT_FILE", "SSL_CERT_DIR", "CODEX_CA_CERTIFICATE", "REQUESTS_CA_BUNDLE", "NODE_EXTRA_CA_CERTS")
+                env = {k: os.environ[k] for k in ("PATH", "HOME", "TMPDIR", "LANG", "LC_ALL", "SHELL", "USER", "LOGNAME") + rede if k in os.environ}
             env["CODEX_HOME"] = str(CODEX_HOME)
             try:
                 self.proc = subprocess.Popen(
