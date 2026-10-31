@@ -19,7 +19,7 @@ Esta função monta o briefing de tese de **uma oferta**, etapa por etapa, dentr
 
 1. **Qual oferta.** Com o nó Oferta ligado, é a dele. Sem nó, pergunte o expert e a oferta, mostrando os que existem (`listar_cofre`). A oferta pode ser nova.
 2. **As bíblias.** O briefing parte das bíblias. Use `listar_biblias` e `ler_biblia`; bíblia que veio ligada no flow ou anexada no chat também vale. Se não houver nenhuma, diga isso e ofereça montar uma primeiro com a função de montar a bíblia da VSL. Não invente o que o nicho faz.
-3. **O expert.** Se o expert já existe, leia as notas `Projetos/{Expert}/Credenciais.md` e `Projetos/{Expert}/História.md` (`ler_nota`) e use o que estiver lá na etapa sobre o expert, em vez de perguntar de novo.
+3. **O expert.** Se o expert já existe, leia as notas `Projetos/{Expert}/Credenciais.md` e `Projetos/{Expert}/História.md` (`ler_nota`) e use o que estiver lá na etapa da narrativa da VSL, em vez de perguntar de novo.
 
 ## Etapa por etapa
 

@@ -23,7 +23,7 @@ PORTA = int(os.environ.get("ATLAS_PORTA", "5178"))
 DESTINOS = {
     "biblia": ("VSL", "Bíblia do nicho", "Biblioteca/Modelos/Bíblia do nicho.md"),
     "briefing": ("VSL", "Briefing de tese", "Biblioteca/Modelos/Briefing de tese.md"),
-    "cruzamento": ("VSL", "Cruzamento de raio-X", "Biblioteca/Modelos/Cruzamento de raio-X.md"),
+    "cruzamento": ("VSL", "Cruzamento de bíblias", "Biblioteca/Modelos/Cruzamento de bíblias.md"),
 }
 
 CODEX = Codex()
@@ -108,6 +108,7 @@ def cofre():
         (v / "Projetos").mkdir(exist_ok=True)
     if FORMATOS_PROTEGIDOS:
         _formatos_em_dia(v)
+        _biblioteca_em_dia(v)
     if (v / "Biblioteca" / "Modelos").is_dir() and (MODELO / "Modelos").is_dir():      # modelo novo do app chega a quem já tem a pasta
         for f in (MODELO / "Modelos").glob("*.md"):
             if not (v / "Biblioteca" / "Modelos" / f.name).exists():
@@ -122,7 +123,7 @@ def _formatos_em_dia(v):
     origem, destino = MODELO / "Formatos", v / "Biblioteca" / "Formatos"
     if not origem.is_dir() or not (v / "Biblioteca").is_dir():
         return
-    marca = hashlib.sha1("\n".join(sorted(p.name for p in origem.glob("*.md"))).encode()).hexdigest()[:12]
+    marca = hashlib.sha1("\n".join(sorted(p.relative_to(origem).as_posix() for p in origem.rglob("*.md"))).encode()).hexdigest()[:12]
     selo = destino / ".versao"
     try:
         if selo.read_text(encoding="utf-8").strip() == marca:
@@ -138,6 +139,65 @@ def _formatos_em_dia(v):
         selo.write_text(marca, encoding="utf-8")
     except OSError as e:
         print("Não deu para atualizar os formatos:", e)
+
+
+NAO_ATUALIZADAS = {"Narrativas": "Não atualizadas", "Ângulos": "Não atualizados"}      # o que continua disponível, atrás das validadas
+SAIRAM = {"Narrativas": ["05 Leitura Mental com Foco no Problema.md"], "Modelos": ["Cruzamento de raio-X.md"]}      # trocadas por outra nota
+MODELOS_TROCADOS = ["Anúncio.md", "Bíblia do nicho.md", "Briefing de tese.md", "Formato.md", "Narrativa.md", "Ângulo.md"]
+
+
+def _biblioteca_em_dia(v):
+    """Instalação dos alunos: uma vez por versão, leva à pasta de quem já tem o Octopus IA as notas validadas e os modelos novos.
+    O que veio com o programa e não foi atualizado desce para a subpasta e continua disponível para os agentes. O que a
+    pessoa criou fica onde está. O que é trocado vai para a lixeira, nunca é apagado."""
+    import shutil, time
+    selo = v / "Biblioteca" / ".versao"
+    try:
+        versao = (RAIZ / "VERSION").read_text(encoding="utf-8").strip()
+        if selo.is_file() and selo.read_text(encoding="utf-8").strip() == versao:
+            return
+    except OSError:
+        return
+    lixo = v / ".trash" / f"Biblioteca-{versao}-{time.strftime('%Y%m%d-%H%M%S')}"
+
+    def guardar(arq, pasta):
+        (lixo / pasta).mkdir(parents=True, exist_ok=True)
+        shutil.move(str(arq), str(lixo / pasta / arq.name))
+
+    try:
+        for pasta, antigas in NAO_ATUALIZADAS.items():
+            origem, destino = MODELO / pasta, v / "Biblioteca" / pasta
+            if not origem.is_dir():
+                continue
+            (destino / antigas).mkdir(parents=True, exist_ok=True)
+            for nome in SAIRAM.get(pasta, ()):
+                if (destino / nome).is_file():
+                    guardar(destino / nome, pasta)
+            for f in origem.glob("*.md"):
+                alvo = destino / f.name
+                if alvo.is_file():
+                    if alvo.read_bytes() == f.read_bytes():
+                        continue
+                    guardar(alvo, pasta)
+                shutil.copy2(f, alvo)
+            for f in (origem / antigas).glob("*.md"):
+                solta, alvo = destino / f.name, destino / antigas / f.name
+                if solta.is_file() and not alvo.exists():
+                    shutil.move(str(solta), str(alvo))
+                elif not alvo.exists():
+                    shutil.copy2(f, alvo)
+        modelos = v / "Biblioteca" / "Modelos"
+        for nome in SAIRAM.get("Modelos", ()):
+            if (modelos / nome).is_file():
+                guardar(modelos / nome, "Modelos")
+        for nome in MODELOS_TROCADOS:
+            f, alvo = MODELO / "Modelos" / nome, modelos / nome
+            if f.is_file() and alvo.is_file() and alvo.read_bytes() != f.read_bytes():
+                guardar(alvo, "Modelos")
+                shutil.copy2(f, alvo)
+        selo.write_text(versao, encoding="utf-8")
+    except OSError as e:
+        print("Não deu para atualizar a Biblioteca:", e)
 
 
 def nome_seguro(s, campo):

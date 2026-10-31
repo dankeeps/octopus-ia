@@ -910,6 +910,7 @@ a.lk:hover{text-decoration-color:var(--acc)}
 #leitor .cm-drawer.lt{width:min(680px,calc(100vw - 24px))}
 .lt-props{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:6px;margin-bottom:18px}
 .lt-props div{border:1px solid var(--line);border-radius:var(--r-sm);padding:7px 10px;min-width:0}.lt-props span{display:block;font-size:10.5px;color:var(--faint);text-transform:uppercase;letter-spacing:.06em}
+.lt-div{font-size:10.5px;color:var(--faint);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin:-6px 0 8px;padding-top:12px;border-top:1px solid var(--line)}
 .lt-props b{display:block;font-size:12.5px;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .lt-md{font-size:13.5px;line-height:1.6}
 .lt-sec{margin-top:20px;border-top:1px solid var(--line);padding-top:12px}.lt-sec>span{font-size:11px;color:var(--faint);text-transform:uppercase;letter-spacing:.07em}
@@ -1109,7 +1110,7 @@ const AREAS = [
  {id:'vsl', nome:'VSL', icon:'vsl', flows:true,
   agentes:[
    {id:'biblia', nome:'Bíblia da VSL', papel:'Estudo das VSLs do nicho', anexa:true, doc:'biblia', real:true,
-    desc:'Estuda as VSLs que você manda, divide cada uma nos blocos com tempo e caracteres, e monta a bíblia da VSL no formato do modelo da biblioteca.',
+    desc:'Estuda a VSL que você manda, etapa por etapa: núcleo de conversão, narrativa, mecanismo, nome chiclete, provas, elementos usados, produto e estrutura. Monta a bíblia no formato do modelo da biblioteca.',
     quebra:['Montar a bíblia da VSL com as VSLs ligadas neste chat'],
     grava:['VSL/Bíblia da VSL.md'],
     demandas:[
@@ -1117,16 +1118,16 @@ const AREAS = [
      ['Dividir uma VSL nos blocos com tempo e caracteres','transcrição da VSL','VSL/Bíblia da VSL.md'],
      ['Atualizar a bíblia com VSLs novas','bíblia existente e VSLs novas','VSL/Bíblia da VSL.md']]},
    {id:'briefing', nome:'Briefing de tese', papel:'Tese a partir da bíblia', anexa:true, doc:'briefing', real:true,
-    desc:'Pega a bíblia da VSL e monta com você, etapa por etapa, a promessa central, os mecanismos, o nome chiclete, a oferta, os bônus, o One Belief e o outline.',
+    desc:'Tem as mesmas etapas da bíblia: você responde cada uma e ele sugere o equivalente ao que as VSLs do nicho fazem, do núcleo de conversão à estrutura da VSL.',
     quebra:['Montar o briefing de tese com as bíblias carregadas','Sugerir nomes chiclete para o meu mecanismo'],
     grava:['VSL/Briefing de tese.md'],
     demandas:[
      ['Montar o briefing da tese','bíblia da VSL do projeto','VSL/Briefing de tese.md'],
-     ['Escolher promessa e mecanismos','bíblia da VSL','VSL/Briefing de tese.md'],
+     ['Escolher núcleo de conversão e mecanismo','bíblia da VSL','VSL/Briefing de tese.md'],
      ['Criar nome chiclete','mecanismo escolhido','VSL/Briefing de tese.md'],
-     ['Montar oferta, bônus e outline','escolhas do briefing','VSL/Briefing de tese.md']]},
+     ['Montar produto, bônus e estrutura da VSL','escolhas do briefing','VSL/Briefing de tese.md']]},
    {id:'blocos', nome:'Blocos de VSL', papel:'A VSL, bloco por bloco', anexa:true, real:true,
-    desc:'Escreve a VSL da oferta um bloco por vez, na ordem do outline da tese. Para cada bloco, olha como as VSLs de referência escreveram aquele bloco (tamanho, ritmo, dores, desejos e promessas) e escreve o da sua tese, para você validar antes do próximo.',
+    desc:'Escreve a VSL da oferta um bloco por vez, na ordem da estrutura da tese. Para cada bloco, olha como as VSLs de referência escreveram aquele bloco (tamanho, ritmo, dores, desejos e promessas) e escreve o da sua tese, para você validar antes do próximo.',
     quebra:['Começar'],
     grava:['VSL/Blocos/{nn} - {bloco}.md'],
     demandas:[
@@ -2243,6 +2244,18 @@ function raioX(raiz){
   const fim=partes[partes.length-1].el; ancora.after(abas); let ant=abas; partes.forEach(p=>{ ant.after(p.el); ant=p.el; });
 }
 const LT={pilha:[],atual:null};      /* o caminho percorrido no leitor: a seta volta para a nota de onde se veio */
+/* divisões das propriedades no leitor: o que não está em nenhuma divisão fica no bloco de cima, como sempre */
+const DIVISOES_PROPS={anuncio:[['Tráfego',['gasto','faturamento','hook_rate','hold_rate','ic','ctr','cpa','cpm','conversao_checkout']],['Métricas de VSL',['play_rate','retencao_1min','retencao_pitch','conversao']]]};
+function propsHtml(props,tipo,linkProp,val){
+  if(!props.length) return '';
+  const cel=([k,x])=>`<div><span>${esc(k)}</span><b>${linkProp(k,x)||esc(val(x))||'—'}</b></div>`;
+  const divs=DIVISOES_PROPS[tipo]||[], nas=new Set(divs.flatMap(d=>d[1]));
+  const geral=props.filter(([k])=>!nas.has(k));
+  let h=geral.length?`<div class="lt-props">${geral.map(cel).join('')}</div>`:'';
+  for(const [titulo,chaves] of divs){ const l=chaves.map(k=>props.find(p=>p[0]===k)).filter(Boolean);
+    if(l.length) h+=`<div class="lt-div">${esc(titulo)}</div><div class="lt-props">${l.map(cel).join('')}</div>`; }
+  return h;
+}
 async function abrirNota(caminho,voltando){
   let el=document.getElementById('leitor'); if(!el){ el=document.createElement('div'); el.id='leitor'; document.body.appendChild(el); }
   if(!el.innerHTML){ LT.pilha=[]; LT.atual=null; }
@@ -2261,7 +2274,7 @@ async function abrirNota(caminho,voltando){
     const vinculos=lista('VSL',lig.filter(eVsl))+lista(n.tipo==='vsl'?'Criativos desta VSL':'Criativos que usam esta nota',cit.filter(eAd))+lista('Outros criativos desta VSL',n.irmaos)+lista('Ligada a',lig.filter(x=>!eVsl(x)))+lista('Citada em',cit.filter(x=>!eAd(x)));
     const linkProp=(k,x)=>k==='link'&&/^https?:\/\//.test(String(x))?`<a href="${esc(x)}" target="_blank" rel="noopener">Abrir o link</a>`:null;
     el.innerHTML=`<div class="cm-scrim" data-leitor="fechar"></div><aside class="cm-drawer glass lt" aria-label="Nota"><div class="cm-dhead">${LT.pilha.length?`<button class="iconbtn lt-volta" data-leitor="voltar" title="Voltar para a nota anterior" aria-label="Voltar">${ic('back')}</button>`:''}<div><h3>${esc(n.nome)}</h3><div class="cm-meta"><span class="mono">${esc(n.caminho)}</span></div></div><button class="iconbtn" data-leitor="fechar" title="Fechar">${ic('x')}</button></div>
-      <div class="cm-dbody">${props.length?`<div class="lt-props">${props.map(([k,x])=>`<div><span>${esc(k)}</span><b>${linkProp(k,x)||esc(val(x))||'—'}</b></div>`).join('')}</div>`:''}
+      <div class="cm-dbody">${propsHtml(props,n.tipo||(ehModelo&&(n.props||{}).tipo),linkProp,val)}
         <div class="md lt-md">${md(n.corpo.replace(/```dataview[\s\S]*?```/g,''))}</div>${vinculos}</div></aside>`;
     raioX(el.querySelector('.lt-md'));
     if(window.AtlasGrafo&&AtlasGrafo.atual()) AtlasGrafo.atual().selecionar(n.caminho);
@@ -2520,15 +2533,17 @@ function contextoDoNo(id){
   return out;
 }
 /* ---- Bíblia da VSL por partes: uma seção do modelo por mensagem, sem histórico. As partes ficam guardadas no nó da VSL e o app monta o arquivo ---- */
-const BIB_PADRAO=['Perfil do público','Estrutura da VSL','Elementos usados','Mecanismo','Produto','Raio-X da VSL','As 10 perguntas do público'];
+const BIB_PADRAO=['Núcleo de conversão','Narrativa da VSL','Mecanismo','Nome chiclete','Provas','Elementos usados','Produto','Estrutura da VSL'];
 function bibEtapas(){
   if(!S.bibModelo&&!S.bibModeloPedido&&S.servidor){ S.bibModeloPedido=true;
     fetch('/api/nota?caminho='+encodeURIComponent('Biblioteca/Modelos/Bíblia do nicho.md'),{headers:API,cache:'no-store'}).then(r=>r.ok?r.json():null).then(n=>{ const e=n?[...n.corpo.matchAll(/^## (\d+)\. (.+)$/gm)].map(m=>m[2].trim()):[]; if(e.length) S.bibModelo=e; if(window.AtlasFlow) AtlasFlow.refresh(); }).catch(()=>{}); }
   return S.bibModelo||BIB_PADRAO;
 }
-function bibEstado(vsl){ const et=bibEtapas(), partes=(vsl&&vsl.data.partes)||{}; let feitas=0; while(feitas<et.length&&partes[feitas+1]) feitas++;
+/* só valem as partes do modelo atual: cada uma começa com o título "## N. nome" dele. Parte feita com um modelo antigo é montada de novo */
+function bibValidas(partes){ const et=bibEtapas(), out={}; Object.entries(partes||{}).forEach(([k,t])=>{ if(et[k-1]&&String(t).trim().split('\n')[0].trim().toLowerCase()===`## ${k}. ${et[k-1]}`.toLowerCase()) out[k]=t; }); return out; }
+function bibEstado(vsl){ const et=bibEtapas(), partes=bibValidas(vsl&&vsl.data.partes); let feitas=0; while(feitas<et.length&&partes[feitas+1]) feitas++;
   return {etapas:et,total:et.length,partes,feitas,proxima:feitas<et.length?`Montar a parte ${feitas+1}: ${et[feitas]}`:''}; }
-function bibMontar(vsl,partes){ const d=vsl.data, p2=partes[2]||'', campo=r=>((p2.match(r)||[])[1]||'').replace(/"/g,'').trim();
+function bibMontar(vsl,bruto){ const d=vsl.data, partes=bibValidas(bruto), est=partes[bibEtapas().indexOf('Estrutura da VSL')+1]||'', campo=r=>((est.match(r)||[])[1]||'').replace(/"/g,'').trim();
   const fm=['tipo: biblia-do-nicho',`nicho: "${(d.nicho||'').replace(/"/g,'')}"`,'expert: ""','oferta: ""',`vsl: "${(d.nome||'').replace(/"/g,'')}"`,`estrutura: "${campo(/\*\*Estrutura:\*\*[ \t]*(.+)/)}"`,`duracao: "${campo(/\*\*Duração total:\*\*[ \t]*(.+)/)}"`,`criada: "${new Date().toISOString().slice(0,10)}"`];
   return '---\n'+fm.join('\n')+'\n---\n# Bíblia do nicho\n\n'+Object.keys(partes).map(Number).sort((a,b)=>a-b).map(k=>partes[k].trim()).join('\n\n')+'\n'; }
 function bibPedido(vsl,texto){ const e=bibEstado(vsl), m=texto.match(/(?:parte|etapa|se[cç][aã]o)\s*(\d{1,2})/i); let n=m?+m[1]:e.feitas+1;
@@ -2536,7 +2551,7 @@ function bibPedido(vsl,texto){ const e=bibEstado(vsl), m=texto.match(/(?:parte|e
   const nome=e.etapas[n-1], tem=Object.keys(e.partes).length;
   const instr=`MODO POR PARTES. Você está montando a Bíblia da VSL desta VSL uma seção por vez. Você não tem memória das partes anteriores: tudo o que precisa está no contexto (a VSL${tem?' e a bíblia como está até agora':''}) e no modelo.\n\nEntregue SOMENTE a seção ${n} do modelo, do título "## ${n}. ${nome}" até o fim dela, completa e no formato exato do modelo (mesmos títulos ###, mesmas tabelas e colunas). Não escreva frontmatter, nem o título "# Bíblia do nicho", nem outras seções, nem comentário antes ou depois.`
     +(n===1?'\nSó nesta parte: antes do título, escreva uma única linha "Nicho: <o nicho da VSL>".':'')
-    +(n===2?'\nUse a ferramenta medir_blocos para a duração de cada bloco.':e.partes[2]?'\nQuando citar um bloco, use os nomes da seção 2 que já está na bíblia.':'');
+    +(nome==='Estrutura da VSL'?'\nUse a ferramenta medir_blocos para a duração de cada bloco.':'');
   return {n,nome,total:e.total,vsl:vsl.id,texto:instr+(texto.trim()?'\n\nPedido do usuário: '+texto.trim():''),itens:tem?[{tipo:'doc',titulo:'Bíblia da VSL como está até agora',texto:bibMontar(vsl,e.partes)}]:[]}; }
 /* chegou a resposta de uma parte: guarda no nó da VSL e troca a mensagem pelo arquivo montado */
 /* caches das transcrições abertas no flow (trechos com tempo e texto): só em memória, nunca no estado salvo */
@@ -2544,7 +2559,7 @@ const TR_CACHE={sinc:{},texto:{}};
 /* Briefing de tese: UM arquivo só, alimentado a cada etapa. Quando o usuário aprova uma etapa, o agente entrega a seção dela pronta,
    entre <secao> e </secao>. O Octopus IA tira a seção da mensagem e cola no arquivo do briefing (na ordem do modelo). Ninguém reescreve
    o documento no fim: o arquivo é a soma das seções aprovadas, e é dele que saem os cartões de etapa ao lado do chat */
-const BRI_ORDEM=['one belief','sobre o expert','promessas','mecanismo do problema','mecanismo da solução','nome chiclete','oferta','bônus','outline'];
+const BRI_ORDEM=['núcleo de conversão','narrativa da vsl','mecanismo','nome chiclete','provas','elementos usados','produto','estrutura da vsl'];
 function briJuntar(c,meta){
   let achou=false, ult=-1;
   (c.msgs||[]).forEach((m,i)=>{ if(m.r!=='bot'||m.stream||!m.t) { if(m.docBri) ult=Math.max(ult,i); return; }
@@ -2572,7 +2587,7 @@ function bibUmArquivo(c){
 }
 function bibUmArquivoEmTudo(){ (S.projects||[]).forEach(p=>Object.entries(p.convs||{}).forEach(([no,l])=>(l||[]).forEach((c,k)=>{ const troca=bibUmArquivo(c); if(k||!Object.keys(troca).length) return;
   (p.flows||[]).forEach(f=>(f.nodes||[]).forEach(n=>{ if(n.id===no&&n.data&&typeof n.data.previa==='number'&&n.data.previa in troca) n.data.previa=troca[n.data.previa]; })); }))); }
-/* a Bíblia mediu os blocos da VSL (parte 2): os títulos entram no arquivo da VSL, no ponto em que cada bloco começa.
+/* a Bíblia mediu os blocos da VSL (parte da estrutura): os títulos entram no arquivo da VSL, no ponto em que cada bloco começa.
    Nenhuma palavra do texto muda: é só o título "### N. Nome" inserido antes das primeiras palavras do bloco. Sem achar a maioria, não mexe */
 function vslEmBlocos(texto,blocos){
   const limpo=String(texto||'').replace(/^### \d+\. [^\n]*\n?/gm,'').replace(/\n{3,}/g,'\n\n'); let pos=0; const cortes=[];
@@ -2589,7 +2604,7 @@ function bibChegou(m,et,c){
     if(d&&d.texto!==vsl.data.texto){ vsl.data={...vsl.data,texto:d.texto,blocos:d.achados}; if(window.AtlasFlow&&AtlasFlow.patch) AtlasFlow.patch(vsl.id,{texto:d.texto,blocos:d.achados}); } }
   let t=m.t.trim(), nicho=vsl.data.nicho||''; const ln=t.match(/^Nicho:[ \t]*(.+)$/m); if(ln){ nicho=ln[1].trim(); t=t.replace(ln[0],'').trim(); }
   const ini=t.search(/^## /m); if(ini<0){ m.erro='A resposta não veio no formato da seção. Peça a parte de novo.'; return; }
-  const partes={...(vsl.data.partes||{}),[et.n]:t.slice(ini).trim()};
+  const partes={...(vsl.data.partes||{}),[et.n]:t.slice(ini).trim().replace(/^## .*/,()=>`## ${et.n}. ${et.nome}`)};
   vsl.data={...vsl.data,partes,nicho}; if(window.AtlasFlow&&AtlasFlow.patch) AtlasFlow.patch(vsl.id,{partes,nicho});
   const e=bibEstado(vsl);
   m.doc=bibMontar(vsl,partes); m.docTipo='biblia';
@@ -2600,7 +2615,7 @@ function bibChegou(m,et,c){
 }
 /* ---- Comandos do chat (#): as funções de cada agente. No chat de um agente aparecem as dele; "ver todas" mostra as outras ---- */
 const COMANDOS_EXTRA=[
-  {id:'bib-cruzar',agente:'biblia',nome:'Cruzar informações',desc:'Cria um arquivo cruzando o raio-X das bíblias deste flow: o que aparece em mais de uma VSL',acao:'cruzar'},
+  {id:'bib-cruzar',agente:'biblia',nome:'Cruzar informações',desc:'Cria um arquivo cruzando as bíblias deste flow: o que aparece em mais de uma VSL',acao:'cruzar'},
   {id:'bib-refazer',agente:'biblia',nome:'Refazer uma parte',desc:'Refaz uma seção da bíblia da VSL ligada',texto:'Refazer a parte '},
 ];
 function comandosDoChat(id){
@@ -2615,32 +2630,32 @@ function comandosDoChat(id){
   const fns=(SKB.lista||[]).filter(s=>s.prefixo==='#'&&(!s.agentes.length||s.agentes.some(a=>meus.includes(a)))).map(s=>({id:'fn-'+s.id,funcao:true,nome:s.id,desc:s.resumo||'',texto:'#'+s.id+' ',envia:false,agenteNome:'Função',meu:true}));
   return [...fns,...todos.map(c=>({...c,agenteNome:nomeAg(c.agente),meu:meus.includes(c.agente)}))];
 }
-/* raio-X de cada bíblia deste flow: as VSLs do conjunto (parte 6) e as bíblias inteiras entregues neste chat */
-function raiosXDoFlow(chatId){
-  const f=flowAtual(), out=[], sec=doc=>((String(doc).match(/^## \d+\. Raio-X[^\n]*\n[\s\S]*?(?=^## |(?![\s\S]))/m)||[])[0]||'').trim();
-  (f.nodes||[]).filter(n=>n.type==='vsl').forEach(n=>{ const p=(n.data.partes||{}), rx=Object.values(p).map(sec).find(Boolean); if(rx) out.push({nome:n.data.nome||'VSL',rx,estrutura:(String(p[2]||'').match(/\*\*Estrutura:\*\*[ \t]*(.+)/)||[])[1]||'',duracao:(String(p[2]||'').match(/\*\*Duração total:\*\*[ \t]*(.+)/)||[])[1]||''}); });
+/* as bíblias prontas deste flow: as VSLs do conjunto com todas as partes e as bíblias inteiras entregues neste chat. A estrutura vai à parte, no pedido */
+function bibliasDoFlow(chatId){
+  const f=flowAtual(), out=[], miolo=doc=>String(doc).replace(/^---[\s\S]*?\n---\n/,'').replace(/^## \d+\. Estrutura da VSL[^\n]*\n[\s\S]*?(?=^## |(?![\s\S]))/m,'').trim();
+  (f.nodes||[]).filter(n=>n.type==='vsl').forEach(n=>{ const e=bibEstado(n); if(e.feitas<e.total) return; const doc=bibMontar(n,e.partes); out.push({nome:n.data.nome||'VSL',texto:miolo(doc),estrutura:fmCampo(doc,'estrutura')||'',duracao:fmCampo(doc,'duracao')||''}); });
   const vistos=new Set(out.map(x=>x.nome));
-  ((convsDoNo(chatId)[0]||{msgs:[]}).msgs).slice().reverse().forEach(m=>{ if(!m.doc||m.docTipo!=='biblia') return; const nome=fmCampo(m.doc,'vsl')||fmCampo(m.doc,'nicho')||'Bíblia'; if(vistos.has(nome)) return; const rx=sec(m.doc); if(rx){ vistos.add(nome); out.push({nome,rx,estrutura:fmCampo(m.doc,'estrutura')||'',duracao:fmCampo(m.doc,'duracao')||''}); } });
+  ((convsDoNo(chatId)[0]||{msgs:[]}).msgs).slice().reverse().forEach(m=>{ if(!m.doc||m.docTipo!=='biblia'||!/^## 7\. /m.test(m.doc)) return; const nome=fmCampo(m.doc,'vsl')||fmCampo(m.doc,'nicho')||'Bíblia'; if(vistos.has(nome)) return; vistos.add(nome); out.push({nome,texto:miolo(m.doc),estrutura:fmCampo(m.doc,'estrutura')||'',duracao:fmCampo(m.doc,'duracao')||''}); });
   return out;
 }
-async function cruzarRaioX(chatId){
+async function cruzarBiblias(chatId){
   const f=flowAtual(), no=(f.nodes||[]).find(n=>n.id===chatId); if(!no) return;
-  const rxs=raiosXDoFlow(chatId);
-  if(rxs.length<2){ toast(rxs.length?'Só há uma bíblia com raio-X neste flow. O cruzamento precisa de duas ou mais.':'Nenhuma bíblia com o raio-X pronto neste flow ainda (é a parte 6).'); return; }
-  let modelo=''; try{ const r=await fetch('/api/arquivo?caminho='+encodeURIComponent('Biblioteca/Modelos/Cruzamento de raio-X.md'),{headers:API}); if(r.ok) modelo=(await r.json()).conteudo||''; }catch(_){}
-  if(!modelo){ toast('Não achei o modelo Cruzamento de raio-X em Biblioteca/Modelos.'); return; }
+  const bibs=bibliasDoFlow(chatId);
+  if(bibs.length<2){ toast(bibs.length?'Só há uma bíblia pronta neste flow. O cruzamento precisa de duas ou mais.':'Nenhuma bíblia pronta neste flow ainda.'); return; }
+  let modelo=''; try{ const r=await fetch('/api/arquivo?caminho='+encodeURIComponent('Biblioteca/Modelos/Cruzamento de bíblias.md'),{headers:API}); if(r.ok) modelo=(await r.json()).conteudo||''; }catch(_){}
+  if(!modelo){ toast('Não achei o modelo Cruzamento de bíblias em Biblioteca/Modelos.'); return; }
   const g=gDoNo(no), p=proj(); p.convs[chatId]=p.convs[chatId]||[];
-  let c=p.convs[chatId][0]; if(!c){c={id:uid(),titulo:'Cruzamento de raio-X',atual:Date.now(),msgs:[]}; p.convs[chatId].push(c);}
-  c.msgs.push({r:'user',t:`#Cruzar informações (${rxs.length} VSLs: ${rxs.map(x=>x.nome).join(', ')})`}); c.atual=Date.now();
-  const texto=`CRUZAR INFORMAÇÕES. No contexto está o raio-X de ${rxs.length} bíblias de VSL, uma por VSL: ${rxs.map((x,k)=>`${k+1}. ${x.nome}${x.estrutura?' (estrutura: '+x.estrutura+')':''}${x.duracao?' (duração: '+x.duracao+')':''}`).join('; ')}.\n\nEntregue o documento Cruzamento de raio-X seguindo a seção "Cruzar informações" da sua skill e exatamente este modelo:\n\n${modelo}`;
-  enviarReal(g,c,texto,[],{semHistorico:true,habilidades:['biblia'],soItens:true,itens:rxs.map(x=>({tipo:'texto',titulo:'Raio-X da VSL '+x.nome,texto:x.rx}))});
+  let c=p.convs[chatId][0]; if(!c){c={id:uid(),titulo:'Cruzamento de bíblias',atual:Date.now(),msgs:[]}; p.convs[chatId].push(c);}
+  c.msgs.push({r:'user',t:`#Cruzar informações (${bibs.length} VSLs: ${bibs.map(x=>x.nome).join(', ')})`}); c.atual=Date.now();
+  const texto=`CRUZAR INFORMAÇÕES. No contexto estão ${bibs.length} bíblias de VSL, uma por VSL: ${bibs.map((x,k)=>`${k+1}. ${x.nome}${x.estrutura?' (estrutura: '+x.estrutura+')':''}${x.duracao?' (duração: '+x.duracao+')':''}`).join('; ')}.\n\nEntregue o documento Cruzamento de bíblias seguindo a seção "Cruzar informações" da sua skill e exatamente este modelo:\n\n${modelo}`;
+  enviarReal(g,c,texto,[],{semHistorico:true,habilidades:['biblia'],soItens:true,itens:bibs.map(x=>({tipo:'texto',titulo:'Bíblia da VSL '+x.nome,texto:x.texto}))});
 }
 const FLOW_CB={
   comandos(id){ return comandosDoChat(id); },
   // skills que só rodam quando chamadas com / : as do agente deste chat primeiro
   skills(id){ carregarSkills();
     const meus=contextoDoNo(id).agentes; return (SKB.lista||[]).filter(s=>s.prefixo!=='#').map(s=>({...s,meu:!s.agentes.length||s.agentes.some(a=>meus.includes(a))})).filter(s=>s.meu); },      // só as do agente deste chat (a ultra modelagem é do Copy de anúncio: só aparece em Criativos)
-  comando(id,cid){ const c=comandosDoChat(id).find(x=>x.id===cid); if(c&&c.acao==='cruzar') cruzarRaioX(id); },
+  comando(id,cid){ const c=comandosDoChat(id).find(x=>x.id===cid); if(c&&c.acao==='cruzar') cruzarBiblias(id); },
   vslInfo(id){ const f=flowAtual(), n=f&&(f.nodes||[]).find(x=>x.id===id), e=bibEstado(n); return {feitas:Object.keys(e.partes).length,total:e.total,proxima:e.feitas<e.total?e.etapas[e.feitas]:''}; },
   info(id,type){
     const f=flowAtual(), lig=contextoDoNo(id);
@@ -3522,7 +3537,7 @@ window.AtlasDitado=(()=>{ let rec=null, fluxo=null, dono=null;
 const DIT={};      // estado do microfone por chat fora do flow
 const DOCS={
   'biblia-do-nicho':{chave:'biblia',nome:'bíblia',titulo:'Bíblia da VSL',artigo:'A bíblia',arquivo:'Bíblia do nicho',modelo:'Biblioteca/Modelos/Bíblia do nicho.md',pasta:'VSL'},
-  'cruzamento-de-raio-x':{chave:'cruzamento',nome:'cruzamento de raio-X',titulo:'Cruzamento de raio-X',artigo:'O cruzamento',arquivo:'Cruzamento de raio-X',modelo:'Biblioteca/Modelos/Cruzamento de raio-X.md',pasta:'VSL'},
+  'cruzamento-de-biblias':{chave:'cruzamento',nome:'cruzamento de bíblias',titulo:'Cruzamento de bíblias',artigo:'O cruzamento',arquivo:'Cruzamento de bíblias',modelo:'Biblioteca/Modelos/Cruzamento de bíblias.md',pasta:'VSL'},
   'briefing-de-tese':{chave:'briefing',nome:'briefing',titulo:'Briefing de tese',artigo:'O briefing',arquivo:'Briefing de tese',modelo:'Biblioteca/Modelos/Briefing de tese.md',pasta:'VSL',ofertaNova:true},
   'anuncios':{chave:'anuncio',nome:'anúncios',titulo:'Anúncios',artigo:'Cada anúncio',arquivo:'AD {nn}',modelo:'Biblioteca/Modelos/Anúncio.md',pasta:'Anúncios/Remessa {nn}',lote:true},
   'big-ideas':{chave:'bigidea',nome:'big ideas',titulo:'Big ideas',artigo:'Cada big idea',arquivo:'{Big idea}',modelo:'Biblioteca/Modelos/Big idea.md',pasta:'Big ideas',lote:true},
@@ -3532,7 +3547,7 @@ const DOCS={
   'vsl-da-oferta':{chave:'vsl',nome:'VSL',titulo:'VSL da oferta',artigo:'A VSL',arquivo:'VSL V{n}',modelo:'Biblioteca/Modelos/VSL.md',pasta:'VSL',lote:true,um:true},
   'vsl':{chave:'vsl',nome:'VSL',titulo:'VSL da oferta',artigo:'A VSL',arquivo:'VSL V{n}',modelo:'Biblioteca/Modelos/VSL.md',pasta:'VSL',lote:true,um:true},
   'bloco-de-vsl':{chave:'bloco',nome:'bloco de VSL',titulo:'Bloco de VSL',artigo:'O bloco',arquivo:'{nn} - {bloco}',modelo:'',pasta:'VSL/Blocos',lote:true,um:true}};
-const DOC_RE=/(^|\n)---\n(?:[^\n]*\n)*?tipo:\s*"?(biblia-do-nicho|cruzamento-de-raio-x|briefing-de-tese|controle-de-mercado|dicionario-da-oferta|vsl-da-oferta|bloco-de-vsl|personas|anuncios|big-ideas|vsl(?="?[ \t]*\n))/;      // "vsl" sozinho também vale: é como o modelo grava, e o agente às vezes copia de lá
+const DOC_RE=/(^|\n)---\n(?:[^\n]*\n)*?tipo:\s*"?(biblia-do-nicho|cruzamento-de-biblias|briefing-de-tese|controle-de-mercado|dicionario-da-oferta|vsl-da-oferta|bloco-de-vsl|personas|anuncios|big-ideas|vsl(?="?[ \t]*\n))/;      // "vsl" sozinho também vale: é como o modelo grava, e o agente às vezes copia de lá
 function docTitulo(m){ if(m.docNome) return m.docNome; if(m.docTipo==='bloco'){const b=fmCampo(m.doc,'bloco'), o=fmCampo(m.doc,'ordem'); if(b) return (o&&o!=='0'?o+'. ':'')+b;} const d=docInfo(m)||{}; if((m.docTipo||'biblia')==='biblia'){const v=fmCampo(m.doc,'vsl'); if(v) return (d.titulo||'Bíblia da VSL')+' · '+v;} const q=d.lote&&(String(m.doc).match(/^quantidade:\s*(\d+)/m)||[])[1]; return (d.titulo||'Documento')+(q?` (${q})`:'');}
 function docInfo(m){return Object.values(DOCS).find(d=>d.chave===(m.docTipo||'biblia'));}
 /* respostas antigas em que a VSL veio com "tipo: vsl" e a tela não reconheceu: passam a ter o botão Salvar no Cérebro */

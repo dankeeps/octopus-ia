@@ -290,12 +290,12 @@ def _f(nome, desc, props=None, obrig=None):
 
 
 FERR_ANUNCIO = [
-    _f("listar_narrativas", "Lista as narrativas da biblioteca do cofre: número, nome, grupo (o trabalho que fazem), quando usar, quantos exemplos reais têm e a média de palavras e de tempo desses exemplos."),
+    _f("listar_narrativas", "Lista as narrativas da biblioteca do cofre, primeiro as validadas: número, nome, situação (validada ou não atualizada), grupo (o trabalho que fazem), quando usar, quantos exemplos reais têm e a média de palavras e de tempo desses exemplos."),
     _f("ler_narrativa", "Abre uma narrativa: a ideia, a estrutura (batidas), a média de palavras e de tempo dos exemplos reais e alguns exemplos inteiros. Use o nome ou o número de listar_narrativas.",
        {"nome": {"type": "string"}, "exemplos": {"type": "integer", "description": "quantos exemplos trazer (1 a 5, padrão 3)"}}, ["nome"]),
-    _f("listar_formatos", "Lista os formatos da biblioteca do cofre: nome, categoria, o sinal visual que identifica cada um e com o que se confunde."),
+    _f("listar_formatos", "Lista os formatos da biblioteca do cofre, primeiro os validados: nome, situação (validada ou não atualizada), categoria, o sinal visual que identifica cada um e com o que se confunde."),
     _f("ler_formato", "Abre a nota de um formato: como gravar, quem aparece, o que não pode faltar, como marcar no roteiro e o exemplo roteirizado.", {"nome": {"type": "string"}}, ["nome"]),
-    _f("listar_angulos", "Lista os ângulos da biblioteca do cofre (por onde o anúncio entra no assunto): nome, categoria (Problema, Solução, Clique, CTA, Gancho), se é de anúncio ou do bloco de Oferta da VSL, e a ideia em uma linha.",
+    _f("listar_angulos", "Lista os ângulos da biblioteca do cofre (por onde o anúncio entra no assunto), primeiro os validados (História emocional, Conspiracional, Científico, Notícia): nome, situação (validada ou não atualizada), onde se usa e a ideia em uma linha.",
        {"categoria": {"type": "string", "description": "opcional: Problema | Solução | Clique | CTA | Gancho"}}),
     _f("ler_angulo", "Abre um ângulo: a ideia, quando usar e o exemplo. Use o nome ou o número de listar_angulos.", {"nome": {"type": "string"}}, ["nome"]),
     _f("listar_ganchos", "Lista as notas de ganchos da biblioteca (Biblioteca/Ganchos): fórmulas de abertura por gatilho (Recompensa, Mistério, Crenças, Disrupção, Reconhecimento) e a lista geral de fórmulas prontas. Traz o nome de cada nota e as fórmulas dela."),
@@ -312,7 +312,7 @@ FERR_ANUNCIO = [
         "expert": {"type": "string", "description": "só se não houver nó Oferta ligado"}, "oferta": {"type": "string", "description": "só se não houver nó Oferta ligado"}}),
     _f("ler_anuncio_do_controle", "Lê um anúncio registrado no controle de mercado, inteiro: transcrição, narrativa e elementos. Use o número (n) de ler_controle_de_mercado, com a mesma base.",
        {"n": {"type": "integer"}, "base": {"type": "string"}, "expert": {"type": "string"}, "oferta": {"type": "string"}}, ["n"]),
-    _f("atualizar_anuncio", "Atualiza um anúncio já salvo na oferta: a fase (status), o tempo exato medido no vídeo gravado, as palavras, a versão da VSL e os números da campanha (gasto, faturamento, ctr, hook_rate, hold_rate, ic, cpa). Não mexe no roteiro.",
+    _f("atualizar_anuncio", "Atualiza um anúncio já salvo na oferta: a fase (status), o tempo exato medido no vídeo gravado, as palavras, a versão da VSL e os números de tráfego (gasto, faturamento, hook_rate, hold_rate, ic, ctr, cpa, cpm, conversao_checkout) e de VSL (play_rate, retencao_1min, retencao_pitch, conversao). Não mexe no roteiro.",
        {"anuncio": {"type": "string", "description": "o id (AD07) ou parte do título"},
         "status": {"type": "string", "description": "para gravação | gravado | para edição | editado | no ar | validou | não validou"},
         "tempo": {"type": "string", "description": "duração exata do vídeo gravado, ex.: 1min27"}, "palavras": {"type": "integer"},
@@ -320,6 +320,9 @@ FERR_ANUNCIO = [
         "gasto": {"type": "number"}, "faturamento": {"type": "number"}, "ctr": {"type": "number", "description": "em %"},
         "hook_rate": {"type": "number", "description": "em %"}, "hold_rate": {"type": "number", "description": "em %"},
         "ic": {"type": "number", "description": "custo por início de checkout (initiate checkout), em reais"}, "cpa": {"type": "number", "description": "custo por compra, em reais"},
+        "cpm": {"type": "number", "description": "custo por mil impressões, em reais"}, "conversao_checkout": {"type": "number", "description": "taxa de conversão do checkout (compras ÷ inícios de checkout), em %"},
+        "play_rate": {"type": "number", "description": "quem deu play na VSL, em %"}, "retencao_1min": {"type": "number", "description": "retenção no primeiro minuto da VSL, em %"},
+        "retencao_pitch": {"type": "number", "description": "retenção até o pitch da VSL, em %"}, "conversao": {"type": "number", "description": "taxa de conversão da VSL, em %"},
         "expert": {"type": "string", "description": "só se não houver nó Oferta ligado"}, "oferta": {"type": "string", "description": "só se não houver nó Oferta ligado"}}, ["anuncio"]),
 ]
 PPM = 170          # palavras por minuto de fala em anúncio
@@ -356,15 +359,20 @@ def _regua(exs):
 
 
 def _notas(cofre, pasta, tipo):
+    """As notas de uma pasta da Biblioteca: primeiro as da raiz (as validadas), depois as das subpastas (as não atualizadas)."""
     base = cofre / "Biblioteca" / pasta if cofre else None
     if not base or not base.is_dir():
         return []
     out = []
-    for p in sorted(base.glob("*.md")):
+    for p in sorted(base.glob("*.md")) + sorted(x for x in base.rglob("*.md") if x.parent != base):
         t = p.read_text(encoding="utf-8")
         if _campos(t).get("tipo", "").strip('"') == tipo:
             out.append((p, t))
     return out
+
+
+def _situacao(p, pasta):
+    return "validada" if p.parent.name == pasta else "não atualizada"
 
 
 def _achar_nota(notas, nome):
@@ -456,7 +464,7 @@ def _executor_anuncio(pasta, cofre):
             itens = []
             for p, t in _notas(cofre, "Narrativas", "narrativa"):
                 c = _campos(t)
-                itens.append({"nome": p.stem, "grupo": c.get("grupo", "").strip('"'), "quando_usar": usar.get(p.stem, ""), **(_regua(_exemplos(t)) or {"exemplos": 0})})
+                itens.append({"nome": p.stem, "situacao": _situacao(p, "Narrativas"), "grupo": c.get("grupo", "").strip('"'), "quando_usar": usar.get(p.stem, ""), **(_regua(_exemplos(t)) or {"exemplos": 0})})
             return json.dumps(itens, ensure_ascii=False) if itens else "Nenhuma narrativa em Biblioteca/Narrativas."
         if nome == "ler_narrativa":
             achou = _achar_nota(_notas(cofre, "Narrativas", "narrativa"), args.get("nome"))
@@ -472,7 +480,7 @@ def _executor_anuncio(pasta, cofre):
             # exemplos espalhados pela nota (ofertas diferentes), não só os primeiros
             passo = max(1, len(exs) // k)
             escolhidos = exs[::passo][:k]
-            partes = [f"# {p.stem}", "## A ideia\n" + _secao(t, "A ideia"), "## Estrutura\n" + _secao(t, "Estrutura")]
+            partes = [f"# {p.stem} ({_situacao(p, 'Narrativas')})", "## A ideia\n" + _secao(t, "A ideia"), "## Estrutura\n" + _secao(t, "Estrutura")]
             partes.append("## Régua (dos exemplos reais)\n" + (f"{r['exemplos']} exemplos · média de {r['media_palavras']} palavras ({r['tempo_medio']} a {PPM} palavras/min) · de {r['faixa_palavras']} palavras"
                           if r else "Sem exemplos reais suficientes: use as faixas padrão da skill."))
             if _secao(t, "Inteligência acumulada"):
@@ -485,7 +493,7 @@ def _executor_anuncio(pasta, cofre):
             for p, t in _notas(cofre, "Formatos", "formato"):
                 sinal = re.search(r"\*\*Sinal:\*\*\s*(.+)", t)
                 conf = re.search(r"\*\*Confunde com:\*\*\s*(.+)", t)
-                itens.append({"nome": p.stem, "categoria": _campos(t).get("categoria", "").strip('"'),
+                itens.append({"nome": p.stem, "situacao": _situacao(p, "Formatos"), "categoria": _campos(t).get("categoria", "").strip('"'),
                               "sinal": sinal.group(1).strip() if sinal else "", "confunde_com": conf.group(1).strip() if conf else ""})
             return json.dumps(itens, ensure_ascii=False) if itens else "Nenhum formato em Biblioteca/Formatos."
         if nome == "ler_formato":
@@ -501,7 +509,7 @@ def _executor_anuncio(pasta, cofre):
                 c = _campos(t)
                 if cat and _sem_acento(c.get("categoria", "").strip('"')).lower() != cat:
                     continue
-                itens.append({"nome": p.stem, "categoria": c.get("categoria", "").strip('"'), "onde": c.get("onde", "").strip('"'), "ideia": _secao(t, "A ideia")})
+                itens.append({"nome": p.stem, "situacao": _situacao(p, "Ângulos"), "categoria": c.get("categoria", "").strip('"'), "onde": c.get("onde", "").strip('"'), "ideia": _secao(t, "A ideia")})
             return json.dumps(itens, ensure_ascii=False) if itens else "Nenhum ângulo em Biblioteca/Ângulos."
         if nome == "ler_angulo":
             achou = _achar_nota(_notas(cofre, "Ângulos", "angulo"), args.get("nome"))
@@ -1540,7 +1548,7 @@ INSTR_ARRUMAR = """
 
 **Criar e alterar o que é do usuário.** Todo chat pode criar, pelos modelos, tudo o que o usuário produz (a oferta, a VSL, os anúncios e as remessas, as big ideas, as personas, o dicionário, o controle de mercado, a bíblia, o briefing) e pode alterar depois o que foi criado: essas notas e as do expert (Credenciais e História). Não peça permissão para isso além da confirmação normal de antes de gravar.
 **A raiz do Octopus IA não muda:** a Biblioteca inteira (modelos, narrativas, formatos, ângulos, ganchos, estruturas), as skills e os agentes. A ferramenta recusa qualquer alteração nelas.
-- `mudar_propriedades`: troca ou preenche propriedades de uma nota sem tocar no texto. É o caminho para pôr as métricas num anúncio ou numa VSL (gasto, faturamento, ctr, hook_rate, hold_rate, ic, cpa, play_rate, retenções, conversão), o link, o status.
+- `mudar_propriedades`: troca ou preenche propriedades de uma nota sem tocar no texto. É o caminho para pôr as métricas num anúncio ou numa VSL (gasto, faturamento, hook_rate, hold_rate, ic, ctr, cpa, cpm, conversao_checkout, play_rate, retenções, conversão), o link, o status.
 - `editar_nota`: muda o texto de uma nota. Leia antes (`ler_nota`) e mande a nota inteira, com o cabeçalho, mexendo só no que foi pedido. A versão anterior vai para a lixeira.
 - `renomear_nota`: muda o nome da nota. Anúncio continua começando por "AD NN".
 - **Você não exclui nada.** Não existe ferramenta para excluir nota nem pasta: se pedirem, diga que excluir é feito pelo próprio usuário, no menu do Cérebro (os três pontinhos) ou no Ficheiro.

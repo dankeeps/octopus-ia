@@ -13,7 +13,15 @@ estudado: ""
 
 ## Como gravar
 
-## Exemplo roteirizado
+## Exemplo
+
+<!-- Um bloco por exemplo real. O link fica embaixo do nome, nunca em propriedade lá em cima, porque o formato junta vários exemplos.
+
+### Nicho NN — Nome da oferta ou da página
+**Duração:** 
+
+> Roteiro inteiro, como foi falado.
+-->
 
 ## Inteligência de edição
 

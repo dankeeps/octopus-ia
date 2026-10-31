@@ -40,8 +40,10 @@ data: "{{date}}"
 
 ## Roteiro
 """
-# os números de cada anúncio (ic = custo por início de checkout)
-METRICAS_ANUNCIO = ["gasto", "faturamento", "ctr", "hook_rate", "hold_rate", "ic", "cpa"]
+# os números de cada anúncio, nas duas divisões do modelo (ic = custo por início de checkout)
+METRICAS_TRAFEGO = ["gasto", "faturamento", "hook_rate", "hold_rate", "ic", "ctr", "cpa", "cpm", "conversao_checkout"]
+METRICAS_VSL = ["play_rate", "retencao_1min", "retencao_pitch", "conversao"]
+METRICAS_ANUNCIO = METRICAS_TRAFEGO + METRICAS_VSL
 # as fases de um anúncio, na ordem em que ele anda
 STATUS_ANUNCIO = ["para gravação", "gravado", "para edição", "editado", "no ar", "validou", "não validou"]
 BIG_IDEA_PADRAO = """---

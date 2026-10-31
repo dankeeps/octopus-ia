@@ -20,32 +20,75 @@ Esse é um modelo de copy especial para que seu público pare de procrastinar e 
 
 ## Exemplo
 
-*Anúncios reais das bibliotecas estudadas (5 anúncios em 3 ofertas: Oferta A, Método B, Oferta C). Um exemplo por roteiro; quando o mesmo roteiro aparece com outros ganchos, os ganchos ficam listados embaixo dele. Substituiu o exemplo do e-book em 29/09/2026.*
+### Emagrecimento 09 — Expert E (Método E)
+**Duração:** 2:18 · 384 palavras faladas
+**Ângulo:** [[03 Científico|Científico]] · **Formato:** [[Pérola]] (abertura) + [[Topázio]]
+**Onde está a narrativa:** "aplique o Método E por 30 dias e veja o que pode acontecer": o que aconteceria se a pessoa fizesse, contado fase a fase (primeiro dia, primeira semana, segunda, terceira, fim do mês) até a calça voltar a fechar, e o CTA.
 
-### Oferta C — Expert C · Anúncio 41
-**Formato:** falando para a câmera · **Por que é esta narrativa:** 'O que pesa mais, um quilo de algodão ou o peso de não fazer o truque…?': projeta a cadeia de consequências de não agir, até 'não conseguir limpar o próprio brioco'.
+> [Ilustração em traço de uma mulher com a mão nas costas, na altura do fígado, que brilha em amarelo ("Se você tem gordura no fígado, veja isso!" na tela). Depois, a tela fica dividida até o fim: embaixo, um raio-x fixo do intestino; em cima, o [expert], de blusa bege e sem jaleco, sobre fundos coloridos e com animações dos órgãos.]
+>
+> Pessoas com esteatose hepática ficaram chocadas com um simples truque atrás das costas que ajuda a limpar a gordura no fígado. Aplique o Método E por 30 dias e veja o que pode acontecer com a gordura lá no seu fígado.
+>
+> ["PRIMEIRO DIA" em letras grandes na metade de cima. Animações 3D do intestino por dentro e da barreira intestinal, intercaladas com o [expert] sentado no consultório, com um cartaz do sistema digestivo ao lado. O fígado com gordura no "carga muito menor".]
+>
+> No primeiro dia nada visível ainda, mas dentro do intestino a primeira fase já está agindo e reduzindo aquela carga fermentativa que tende a estimular a produção em excesso daquela proteína que vai afrouxando a barreira do intestino. Então aí o fígado começa a receber uma carga muito menor.
+>
+> [Na metade de cima, animações do intestino, das vilosidades e da circulação entre o intestino e o fígado. O [expert] volta a cada mudança de fase, com o texto da fase em letras grandes.]
+>
+> Nos primeiros dias, a barreira intestinal, que começa a se reorganizar, com menos fragmentos chegando ao fígado pela circulação que liga esses dois órgãos. Então, em muitos casos, é por ali que o estado inflamatório começa a recuar. Lá pela primeira semana, a digestão tende a mudar. A barriga pode começar a desinchar, os gases diminuindo, o intestino muito mais calmo e, claro, o fígado recebendo menos sobrecarga.
+>
+> [Animações da insulina e da gordura abdominal sendo mobilizada, com o [expert] entre elas.]
+>
+> Na sequência, a insulina começa a agir com muito mais precisão. Quando o fígado recupera essa eficiência, no processo todo, a gordura abdominal tende a ser mobilizada de forma muito mais eficiente.
+>
+> [Na metade de cima, imagens de apoio da balança, da calça larga que volta a fechar e de um corpo 3D com a gordura em amarelo, com "TERCEIRA SEMANA" em letras grandes. O [expert] no consultório, gesticulando.]
+>
+> Por volta da segunda semana, em parte dos casos, a balança já começa a responder. Não porque a pessoa está somente comendo menos, mas porque o metabolismo pode estar sendo destravado. O fígado processando gordura com muito mais eficiência. Chegando na terceira semana, as roupas já dão um sinal. A calça que estava apertada já pode voltar a fechar. A barriga que resiste tende a ceder quando uma grande causa então está sendo trabalhada.
+>
+> [Animação do fígado se limpando e duas mulheres mostrando a barriga, antes e depois. O [expert] no consultório.]
+>
+> Ao fim de 30 dias, o quadro costuma estar muito diferente. A gordura acumulada no tecido do fígado pode estar recuando. O metabolismo muito mais ativo, o corpo respondendo, de um jeito que não respondia antes.
+>
+> [O [expert] no consultório, falando direto para a câmera. Animações do intestino por dentro e de um corpo com o fígado em destaque. Fecha com setas vermelhas apontando para baixo no "clica aqui".]
+>
+> O que eu aprendi nesses anos todos aqui no meu consultório é que o fígado engordurado raramente é um problema dele mesmo. Ele costuma ser o resultado de um intestino sobrecarregado por muito tempo. Quando a gente cuida do intestino, o fígado já pode ir se recuperando. E quando o fígado vai se recuperando, o corpo vai respondendo melhor. Eu gravei uma apresentação completa, gratuita, rápida, mostrando como o meu protocolo, o SER, funciona em cada uma das três etapas. Clica aqui e assiste.
 
-> O que pesa mais? Um quilo de algodão ou o peso de não fazer um truque metabólico de 15 minutos que acelera o metabolismo e te faz perder entre 10 e 15 quilos de barriga em 30 dias, mesmo depois dos 40 ou 50 anos? O peso de continuar acumulando barriga e aumentando o risco de AVC, câncer, diabetes e dezenas de outros problemas relacionados ao processo inflamatório que a gordura causa no seu corpo? Mais gordura, mais aromatase, mais aromatase, menos testosterona, mais peitinho, mais barriga, menos libido, mais dores articulares, menos capacidade física, mais dificuldade de se locomover aos 70 anos, Não conseguir limpar o próprio brioco e precisar de ajuda pra levantar No link desse vídeo tem um vídeo ensinando a perder 10kg de barriga em 30 dias Sem dieta, sem academia, sem largar a cervejinha Com apenas 15 minutos por dia, em casa mesmo, com o próprio corpo Mesmo começando do zero e sendo sedentário Clica, assiste, aplica e depois me diz o quanto você perdeu
+### Emagrecimento 11 — Expert E (Método E)
+**Duração:** 1:42 · 314 palavras faladas
+**Ângulo:** [[03 Científico|Científico]] · **Formato:** [[Opala]]
+**Onde está a narrativa:** "trate o intestino por 30 dias, veja o que acontece com a gordura abdominal": o que aconteceria, dia a dia, até "no dia 30 o espelho conta uma história diferente", e o CTA para o protocolo do [expert].
 
-### Oferta A — Expert A · Anúncio 182
-**Formato:** Kegel · fala do expert para a câmera · **Por que é esta narrativa:** 'Quando você fizer o ritual do Tadala Natural todo dia, primeiro... depois... a terceira coisa' projeta o que acontece.
-
-> Quando você fizer o ritual do Tadala Natural todo dia, primeiro você vai jogar o seu medicamento fora. Depois, você vai conseguir controlar a leitada por mais de 30 minutos. E a terceira coisa é nunca mais estourar champanhe com 3 quicadas. Isso só é possível por conta desse treino diário de 7 minutos aqui. Esse é um treino simples, responsável por fortalecer os 3 músculos que aumentam a resistência do seu jubileu. E que você pode fazer na privacidade da sua casa, que vai mudar a sua confiança entre 4 paredes pra sempre. Pare agora o que você está fazendo, se quiser sair disso, pra isso, em apenas 21 dias. É, irmão, os tempos de cuspir rápido acabaram, porque esse é o mesmo truque que os atores de 18+, usam pra durar horas sem parar. Não precisa de equipamentos, não precisa bater uma antes da relação e muito menos técnica de respiração. Nada disso, é muito mais simples. Meus seguidores antigos vão lembrar disso, mas eu prometi que quando o perfil batesse 3 milhões de seguidores, Eu ia liberar uma aula gratuita ensinando na prática o truque do Tadala Natural. Bom, promessa é dívida. O link tá aqui embaixo. Esse truque é 100% natural e livre de colaterais, ao contrário dos remedinhos que você já tomou. Não tem segredo, irmão. Sabe quando você pisa numa mangueira ou aperta ela e a água para de sair? A mesma coisa acontece com o seu júbileu. É o seguinte, ó. Coloca um fonezinho de ouvido e assiste sozinho, porque tem cenas quentes e explícitas. Da última vez que falei sobre isso, uma rede de farmácia que começa com a letra T Derrubou meu vídeo em menos de 48 horas Você sabe bem de que eu tô falando Irmão, se você quer deixar o seu amigão potente e forte Ao ponto de nunca mais gostar com três sentadas Muito menos as preliminares Essa aula é pra você Corre e assiste antes que derrubem ela novamente Agora, se tu quiser continuar com medo De chamar aquela 10 barra 10 pra sair Não é medo disso de não saber o que falar É medo dela aceitar e você não der conta do recado Se quiser continuar vivendo isso, então pode pular esse vídeo. Mas se tu chegou até aqui, é porque você quer dar mais prazer pra sua parceira e fazer ela chegar lá antes de você. Então assiste, vocês já sabem o que fazer.
-
-### Oferta A — Expert A · Anúncio 208
-**Formato:** calistenia · narração com antes e depois de alunos · **Por que é esta narrativa:** 'O que acontece se você fizer calistenia em casa por 28 dias' e descreve semana a semana o resultado.
-
-> O que acontece se você fizer calistenia em casa por 28 dias, que nem essa galera aqui, sem equipamento, sem puxar ferro, sem mensalidade de academia e sem imprevistos que te fazem faltar. A primeira coisa é preparar o seu psicológico, porque já na primeira semana sua barriga vai desinchar e a sua disposição já vai aumentar. Prepara a cabeça, porque logo na segunda semana as roupas vão ficar mais largas e você vai voltar a se admirar no espelho. Blinde-se emocional, porque na terceira e na quarta semana, meu amigo, acho que você não vai estar preparado para tantos elogios. Eu tenho um desafio para você. Hoje pode ser o seu primeiro dia no desafio de treinos preguiçosos. São 28 treinos de 15 minutos para você fazer no conforto da sua casa, com vídeo-aulas gravadas para você dar play e fazer junto comigo. Acabamos de bater 3 milhões de seguidores e para comemorar o marco de maior perfil de calistenia do mundo, Estamos liberando uma aula gratuita Revelando o passo a passo pra começar nos treinos preguiçosos O link tá aqui embaixo Mais de 50 mil seguidores já transformaram o shape com esse desafio Perdendo de 8 a 12 na balança em 28 dias E você pode ser o próximo Clica no link, assiste a aula E pode voltar aqui pra me agradecer daqui a 28 dias Te espero lá
-
-### Oferta A — Expert A · Anúncio 223
-**Formato:** Kegel · fala do expert para a câmera · **Por que é esta narrativa:** 'Quando você fizer o ritual todos os dias, primeiro, segundo, terceiro' — mesmo roteiro do Anúncio 182.
-
-> Quando você fizer o ritual do Tadala Natural todos os dias, primeiro, você vai jogar o seu medicamento fora, segundo, você vai ter a melhor ereção da sua vida, e terceira coisa, você vai parar de broxar na hora H. E isso só é possível por conta desse treino diário de 7 minutos aqui. Esse é um treino simples que fortalece os 3 músculos responsáveis por deixar o seu jubileu duro, que você pode fazer na privacidade da sua casa e que vai mudar a sua confiança na hora H pra sempre. Pare agora o que você está fazendo se quiser sair disso Pra isso em 21 dias É, irmão, os dias de molência acabaram Porque esse é o mesmo truque que os atores 18+, usam pra ficar duros e durar horas na cama Não precisa de equipamentos, pílulas e nem consultas constrangedoras Onde você precisa mostrar sua peça para outro homem Nada disso E os meus seguidores antigos vão lembrar dessa Mas eu prometi que quando o nosso perfil batesse 3 milhões de seguidores Eu ia liberar uma aula gratuita ensinando na prática esse truque do Tadala Natural. Promessa é dívida. O link tá aqui embaixo. Esse truque é 100% natural e livre de qualquer colateral. Ao contrário dessas pílulas que você vem usando. Não tem segredo, irmão. Sabe quando você faz musculação e seu bíceps fica mais duro, mais firme e com as veias aparecendo? Então, você consegue fazer isso com o seu jubileu também. Mas seguinte, coloca um fonezinho de ouvido e assiste essa aula sozinho. Porque tem cenas quentes e explícitas. Na última vez que eu falei sobre isso abertamente, uma rede de farmácia que começa com a letra T derrubou o nosso vídeo em menos de 48 horas. Você sabe de que eu tô falando, né? Então, meu irmão, se você quer ficar com o jubileu tão duro, ao ponto dele não ficar mole quando você colocar a camisinha, essa aula é pra você. Clica e assiste antes que ela saia do ar. Agora, se você quer ficar com medo de chamar aquela 1010 pra sair, por medo dela aceitar e você não dá conta do recado, Se quiser continuar vivendo isso, então pode pular esse vídeo Mas se você chegou até aqui porque você quer mandar bem na cama E dar o prazer que a sua parceira merece Realizar todas as fantasias dela Então você já sabe o que fazer
-
-### Método B — Expert B · Anúncio 129
-**Formato:** expert falando para a câmera do expert · **Por que é esta narrativa:** 'Imagina continuar comendo tudo o que você come hoje, só que concentrando numa janela curta do dia': projeta os resultados e depois explica o pâncreas descansando.
-
-> Imagina continuar comendo tudo o que você come hoje, só que concentrando numa janela curta do dia. Por causa disso, você começa a emagrecer, a gordura do fígado vai embora, a energia volta, a pele melhora, o sono fica mais profundo, a disposição que você não sente há anos aparece de novo. É o que acontece quando o pâncreas finalmente descansa. Deixa eu te explicar. Quando você come o dia inteiro, de 3 em 3 horas, o seu pâncreas fica trabalhando sem parar, liberando a insulina a cada refeição, a cada lanchinho, a cada cafezinho com açúcar. Enquanto a insulina fica cronicamente elevada, o seu corpo recebe uma ordem constante, armazenar e não queimar. E aquela gordurinha nunca vai embora, porque o sinal para queimá-la nunca chega. Quando você concentra a alimentação numa janela e deixa o corpo mais tempo sem comida, o pâncreas descansa, a insulina cai e o glucagon sobe. E o corpo finalmente recebe a permissão que estava esperando. Agora você pode queimar a gordura que ficou armazenada. É exatamente isso que o método B faz. Não é sobre passar fome, é sobre dar ao seu corpo a janela que ele precisa para funcionar do jeito que foi projetado. Após muitos pedidos, eu gravei uma aula completa explicando como aplicar esse protocolo na sua rotina. Clica no link aqui embaixo escrito saiba mais e assiste antes que essa aula saia do ar.
+> [Um médico de IA, de pijama cirúrgico azul, recortado na parte de baixo da tela sobre uma animação 3D do intestino. No "dia 1", um calendário de 30 dias ao lado da imagem do intestino ("NADA VISÍVEL" na tela). Depois, animações de dentro do intestino: a proteína abrindo a barreira e as toxinas na corrente sanguínea.]
+>
+> Trate o intestino por 30 dias. Veja o que acontece com a gordura abdominal no dia 1. Nada visível. Mas dentro do intestino, a produção de zonulina, a proteína que estava abrindo a barreira intestinal e jogando toxinas na corrente sanguínea começa a diminuir. O fígado para de receber aquela enxurrada inflamatória que chegava direto pelo sangue.
+>
+> [Animações, uma por frase: o fígado saindo da sobrecarga, um corpo transparente com as funções metabólicas, a insulina no vaso. O calendário volta marcando o dia 7.]
+>
+> No dia 3, a barreira começa a se fechar. O fígado sai do estado de sobrecarga e começa a redirecionar a tensão para as funções metabólicas que estava deixando em segundo plano, inclusive a regulação da insulina. No dia 7, a insulina começa a agir com mais precisão.
+>
+> [Uma mulher comendo salada no "não porque você mudou o que come", a animação do fígado e o médico de pijama cirúrgico numa sala com estante de livros. Um corpo 3D com a gordura abdominal em amarelo.]
+>
+> Não porque você mudou o que come, mas porque o fígado voltou a processá-la direito. E quando a insulina funciona bem, a gordura abdominal começa a ser mobilizada de novo.
+>
+> [O calendário marcando o dia 14 com uma foto de barriga ao lado. O médico na sala. Uma mulher mostrando a barriga na cozinha no "ao longo do dia" e o corpo 3D com a gordura em amarelo.]
+>
+> No dia 14, a barriga começa a desinchar. Primeiro com o inchaço inflamatório, aquela barriga que aparece ao longo do dia e some de manhã. Depois a gordura começa a responder de verdade.
+>
+> [O calendário no dia 21 com a foto de uma mulher puxando a calça larga. Uma mulher fechando a calça jeans, um prato de frango com brócolis no "déficit calórico" e animações do metabolismo de gordura e do fígado.]
+>
+> No dia 21, as roupas começam a dar sinal. A calça que estava apertada volta a fechar. Não porque você está em déficit calórico, mas porque o metabolismo de gordura foi destravado e o fígado está fazendo o trabalho que o excesso de toxinas intestinais havia interrompido.
+>
+> [No "a barriga que resistiu à dieta, a exercício, a tudo": a barriga sentada no carro, uma mulher comendo salada, alguém treinando na academia, a barriga saindo da calça e uma mulher levantando a blusa e mostrando a barriga seca. Volta para o médico no "a raiz do problema foi tratada".]
+>
+> No dia 30, o espelho conta uma história diferente. A barriga que resistiu à dieta, a exercício, a tudo, finalmente começou a ceder, porque a raiz do problema foi tratada.
+>
+> ["PROTOCOLO SER" em letras grandes sobre o intestino. Imagens do Expert E: escrevendo numa mesa com o nome na tela, de blazer ("NUTRICIONISTA E NATUROPATA") e de terno. O médico na sala e animações das três fases: o intestino aceso em azul e vermelho, o fígado e a flora intestinal.]
+>
+> O método que eu recomendo para isso é o Método E, do Expert E, nutricionista e naturopata com quase duas décadas de experiência clínica. 3 fases para silenciar a inflamação que estava sobrecarregando o fígado, expurgar o desequilíbrio microbiano instalado e recolonizar com as bactérias que mantêm essa barreira fechada.
+>
+> [O [expert] de camisa numa cozinha, segurando um copo de suco roxo ("APRESENTAÇÃO GRATUITA" na tela). Fecha com o médico de pijama cirúrgico, setas vermelhas e o botão "CLIQUE NO LINK ABAIXO!!!".]
+>
+> Ele gravou uma apresentação gratuita explicando esse processo. O link está aqui embaixo. Clique e assiste antes de sair.
 
 ## Inteligência acumulada
 

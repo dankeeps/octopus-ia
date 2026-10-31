@@ -164,7 +164,7 @@ def grafo(v):
 
 # ---------------- a árvore do Cérebro (as quatro pastas) ----------------
 SEM_MODELO = "(pensar no modelo)"
-ORDEM_MODELOS = ["Bíblia do nicho", "Cruzamento de raio-X", "Briefing de tese", "VSL", "Anúncio", "Big idea", "Persona", "Dicionário da oferta", "Anúncio do controle de mercado",
+ORDEM_MODELOS = ["Bíblia do nicho", "Cruzamento de bíblias", "Briefing de tese", "VSL", "Anúncio", "Big idea", "Persona", "Dicionário da oferta", "Anúncio do controle de mercado",
                  "Narrativa", "Formato", "Ângulo", "Estrutura de VSL", "Spy página", "Relatório de Spy", "Credenciais", "História"]
 
 
@@ -174,6 +174,12 @@ def _arq(p, v, nome=None):
 
 def _arqs(pasta, v):
     return [_arq(p, v) for p in sorted(pasta.glob("*.md"), key=lambda x: x.name.lower())] if pasta.is_dir() else []
+
+
+def _com_subpastas(pasta, v):
+    """As notas da raiz e, depois, as pastas de dentro (narrativas, formatos e ângulos não atualizados)."""
+    subs = sorted((d for d in pasta.iterdir() if d.is_dir() and not d.name.startswith(".")), key=lambda x: x.name.lower()) if pasta.is_dir() else []
+    return _arqs(pasta, v) + [_pasta(d.name, _arqs(d, v)) for d in subs]
 
 
 def _pasta(nome, filhos, obs=""):
@@ -226,7 +232,7 @@ def arvore(v, skills, semente=None):
     mods = {p.stem: p for p in (bib / "Modelos").glob("*.md")} if (bib / "Modelos").is_dir() else {}
     rotulo = {"Anúncio": "Copy de anúncio", "VSL": "VSL da oferta"}      # no menu, o modelo aparece com o nome do agente que o usa
     modelos = [_arq(mods[n], v, rotulo.get(n)) for n in ORDEM_MODELOS if n in mods] + [_arq(p, v) for n, p in sorted(mods.items()) if n not in ORDEM_MODELOS]
-    biblioteca = [_pasta(n, _arqs(bib / n, v)) for n in ("Narrativas", "Formatos", "Ângulos", "Ganchos", "Estruturas de VSL") if (bib / n).is_dir()]
+    biblioteca = [_pasta(n, _com_subpastas(bib / n, v)) for n in ("Narrativas", "Formatos", "Ângulos", "Ganchos", "Estruturas de VSL") if (bib / n).is_dir()]
     for arq, nome in (("Palavras-chave Spy.md", "Palavras-chave"), ("Vícios de IA.md", "Vícios de IA"), ("Gatilhos do interesse.md", "Gatilhos do interesse"), ("Tom argumentativo.md", "Tom argumentativo")):
         if (bib / arq).is_file():
             biblioteca.append(_arq(bib / arq, v, nome))

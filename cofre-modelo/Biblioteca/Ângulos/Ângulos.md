@@ -4,9 +4,18 @@ tipo: "indice"
 
 # Ângulos
 
+**Use primeiro as notas desta pasta:** são as validadas, com exemplos reais e recentes. As da subpasta "Não atualizados" continuam disponíveis para quando nenhuma validada servir.
+
 > [!info] O que é um ângulo
 > Ângulo é **por onde o anúncio entra** no assunto. A mesma big idea pode entrar pela dor, pela novidade, pela prova ou pela pergunta.
 > No anúncio de direct response a gente não vende o produto: vende o clique para a aula ou para a VSL. Por isso os ângulos estão separados pelo trabalho que fazem no anúncio.
+
+## Validados
+
+- [[01 História emocional]] — O anúncio entra por uma história real de alguém (o expert, um aluno, uma pessoa comum), contada com cena, dor e virada. A emoção da história carrega o argumento e leva para o clique.
+- [[02 Conspiracional]] — O anúncio entra revelando que alguém escondeu ou distorceu a verdade (indústria, mercado, "especialistas"), e que por isso a pessoa não teve resultado até hoje. Tira a culpa dela e aponta um inimigo.
+- [[03 Científico]] — O anúncio entra por um estudo, uma descoberta ou uma explicação de como o corpo ou o problema funciona por dentro. A prova e o porquê dão autoridade ao mecanismo.
+- [[04 Notícia]] — O anúncio entra como se desse uma notícia: algo novo, recente ou que acabou de ser revelado. Parece informação, não propaganda, e a novidade prende a atenção.
 
 ## Problema
 

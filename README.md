@@ -32,7 +32,7 @@ Atualize o Octopus IA que está instalado no meu computador: leia o README.md da
 e siga a seção "Como atualizar".
 ```
 
-Atualizar troca só os arquivos do programa. Seus projetos, notas, conversas, o login do ChatGPT e as configurações ficam guardados fora da pasta do programa e não são tocados.
+Atualizar troca os arquivos do programa e traz as notas novas da Biblioteca. Seus projetos, VSLs, anúncios, conversas, o login do ChatGPT e as configurações ficam fora da pasta do programa e não são tocados. Na Biblioteca, o que você criou fica como está, e o que for trocado vai para a lixeira do Octopus IA.
 
 ## Onde ficam os seus dados
 

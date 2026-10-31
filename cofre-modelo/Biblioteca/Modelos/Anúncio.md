@@ -17,14 +17,22 @@ tempo: ""
 status: "para gravação"
 metodo_de_copy: "Octopus - "
 link: ""
+data: "{{date}}"
+# ── Tráfego ──
 gasto:
 faturamento:
-ctr:
 hook_rate:
 hold_rate:
 ic:
+ctr:
 cpa:
-data: "{{date}}"
+cpm:
+conversao_checkout:
+# ── Métricas de VSL ──
+play_rate:
+retencao_1min:
+retencao_pitch:
+conversao:
 ---
 # {{title}}
 

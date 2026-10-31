@@ -402,7 +402,7 @@ def _nova_narrativa(v, nome, ideia, estrutura, exemplo, origem):
     """Cria a nota da narrativa em Biblioteca/Narrativas (número seguinte), a partir do modelo. Devolve o caminho."""
     pasta_n = v / "Biblioteca" / "Narrativas"
     pasta_n.mkdir(parents=True, exist_ok=True)
-    nums = [int(m.group(1)) for p in pasta_n.glob("*.md") for m in [re.match(r"(\d+)\s", p.stem)] if m]
+    nums = [int(m.group(1)) for p in pasta_n.rglob("*.md") for m in [re.match(r"(\d+)\s", p.stem)] if m]
     n = max(nums or [0]) + 1
     titulo = limpar(nome)[:70]
     arq = pasta_n / f"{n:02d} {titulo}.md"

@@ -1,11 +1,13 @@
 ---
 name: biblia-do-nicho
-description: Estuda uma VSL de um nicho (transcrição ou texto colado) e monta a Bíblia do nicho no formato do modelo — perfil do público, estrutura da VSL em blocos próprios com função e duração, elementos usados, os três mecanismos, nomes chiclete, produto, raio-X da VSL (trechos literais e resumo) e as 10 perguntas do público. Use quando o usuário mandar uma VSL de um nicho e pedir para estudar ou montar a bíblia.
+description: Estuda uma VSL de um nicho (transcrição ou texto colado) e monta a Bíblia do nicho no formato do modelo — núcleo de conversão, narrativa da VSL, mecanismo, nome chiclete, provas, elementos usados, produto e estrutura da VSL em blocos próprios com função e duração. Use quando o usuário mandar uma VSL de um nicho e pedir para estudar ou montar a bíblia.
 ---
 
 # Bíblia do nicho
 
 Agente da aba **VSL** do Octopus IA. O usuário manda **uma VSL** e o agente devolve, na conversa, a bíblia dela preenchida. Cada bíblia é o estudo de uma VSL só. A gravação é feita pelo Octopus IA: quando o usuário pede no chat, pela ferramenta `salvar_no_cerebro` (sempre dentro de um expert e de uma oferta; se ele não disser qual, pergunte). O agente nunca escreve arquivos por conta própria.
+
+A bíblia e o Briefing de tese têm **as mesmas etapas**. Aqui você preenche cada uma a partir da VSL do concorrente; no briefing, o usuário responde cada uma com a ajuda de sugestões equivalentes.
 
 ## Tudo parte de um modelo
 Nada é criado sem modelo. Antes de escrever, leia o modelo em `Biblioteca/Modelos/Bíblia do nicho.md` e siga as seções, a ordem e as propriedades que estão lá. Se o usuário mudou o modelo, vale o arquivo. Se o que ele pediu ainda não tem modelo, **não invente um formato**: avise que falta o modelo e proponha criar o modelo primeiro.
@@ -22,7 +24,49 @@ A bíblia é o retrato do que a VSL faz para vender. Registre o que ela diz e co
 - **Destino (o app grava ao inserir):** `Projetos/{Expert}/{Oferta}/VSL/Bíblia do nicho.md`.
 - **Medidor:** `scripts/medir_blocos.py` nesta pasta.
 
-## Seção 2: a estrutura da VSL
+## Seção 1: núcleo de conversão
+É o motivo pelo qual a VSL funcionou, o centro de tudo. Não é só a promessa nem só o mecanismo: é uma mistura de narrativa, dores e desejos. Para achar, responda: **por que a pessoa comprou isso?** O que ela já vivia e já suspeitava, e que explicação a VSL ligou a isso?
+
+Dois exemplos do que é um núcleo de conversão:
+- **VSL de traqueamento.** Ela vendeu porque as pessoas já passavam pelo problema de ter dias bons e dias ruins no Facebook e já suspeitavam minimamente do traqueamento. A VSL liga isso à atualização do iOS, que não retém mais os dados, e explica em profundidade que o dia bom e o dia ruim são consequência de um traqueamento feito errado.
+- **VSL de viralização.** A pessoa já sente que tudo o que faz não dá certo. A VSL explica que ela flopa porque não está na lista de favoritos: existem formatos favoritos que o algoritmo privilegia, e quem souber quais são e executar tem resultado.
+
+Repare no padrão: a VSL parte do que a pessoa já vive e já sente e entrega uma explicação que dá sentido a isso. Escreva o núcleo em uma frase e preencha as outras linhas do modelo.
+
+## Seção 2: narrativa da VSL
+É o que a VSL é, como um todo, e quem a conduz. Aqui entra o expert: quem ele é dentro da VSL e por que o público acredita nele.
+
+Não é necessariamente a história. Exemplos:
+- Uma mulher que tentou produzir conteúdo de todo jeito, não deu certo, até descobrir a saída.
+- Uma mulher que engordou depois da gravidez e começou a investigar um monte de coisa.
+- Um especialista que sabe muito e desenvolveu um método próprio. Essa VSL pode nem ter história.
+
+Se a VSL tem história, diga qual em "Tem história? Qual". Se não tem, escreva que não tem.
+
+## Seção 3: mecanismo
+1. **Mecanismo do problema.** Qual é o problema principal que a VSL aponta e que explica a situação da pessoa. Ex.: "suas bactérias estão fazendo você engordar".
+2. **Mecanismo da função.** Como aquele problema acontece por dentro: o que leva a ele, o processo. Ex.: "por causa de tal célula que é liberada quando...". Se o problema são as bactérias, a função responde: como elas chegam a essa situação, o que acontece para isso acontecer.
+3. **Mecanismo da solução.** Como a solução resolve aquilo: o que ela faz sobre o mecanismo do problema e por que é diferente.
+
+## Seção 4: nome chiclete
+O nome curto que a VSL dá ao mecanismo, ao método ou ao produto. Pode ter ou não. Costuma aparecer assim: "eu vou te mostrar como esse novo sistema XYZ", "esse truque", "essa receitinha". Se a VSL não tiver, deixe a tabela vazia e escreva "(a VSL não usa)".
+
+## Seção 5: provas
+Toda prova que a VSL usa: depoimento, estudo, número, demonstração, print, autoridade. Uma linha por prova, com o tipo e como a VSL usa. Cada prova entra uma vez só.
+
+## Seção 6: elementos usados
+São os elementos que **esta VSL usa**. Não são obrigatórios do nicho: é o que apareceu nela.
+
+- **Objetos e alimentos conhecidos.** Algo que a audiência já conhece e que a VSL usa como carona. Ex.: o truque do ovo. Vale objeto, alimento, marca ou tecnologia que o público já tem na cabeça.
+- **Herói.** Alguém ou algo que a VSL traz a favor: uma pessoa conhecida, uma instituição, um médico, um cientista.
+- **Padrão de comunicação.** O que você percebe no jeito de falar: tom, ritmo, quem fala, se é conversa ou aula, como trata o público.
+- **Ângulo.** Por onde a copy entra: mais de promessa, mais conspiracional, de descoberta, de medo, de prova.
+- **Como a VSL argumenta.** O caminho do argumento: de onde parte, que provas empilha, como leva da dor ao produto.
+
+## Seção 7: produto
+Tudo o que a VSL vende, num lugar só: a **oferta** (produto principal, preço, garantia), os **entregáveis** (módulos, materiais, acessos) e os **bônus** (cada um com o que entrega).
+
+## Seção 8: estrutura da VSL
 A estrutura é **a desta VSL**, do jeito que ela foi construída. Não existe lista fixa de blocos e nada é forçado a caber.
 
 - **O que é um bloco.** Um trecho grande da VSL com uma função só: abrir, agitar, revelar o mecanismo, contar a história, apresentar o método, provar, ofertar, fechar. **Não é parágrafo por parágrafo.** O bloco muda quando o assunto e a função mudam. Uma VSL de 30 minutos costuma ter de 6 a 9 blocos.
@@ -35,47 +79,6 @@ A estrutura é **a desta VSL**, do jeito que ela foi construída. Não existe li
 - **Estrutura.** Depois de montar os blocos, compare com as estruturas de `Biblioteca/Estruturas de VSL/`. Se bater com uma, escreva o nome dela em "Estrutura" e na propriedade `estrutura`. Se não bater, escreva "própria" e uma frase dizendo o que ela tem de diferente.
 - Se a VSL volta a um assunto (mecanismo, oferta, mecanismo de novo), cada volta é uma linha.
 
-## Seção 3: elementos usados
-São os elementos que **esta VSL usa**. Não são obrigatórios do nicho: é o que apareceu nela.
-
-- **Superestruturas.** Coisas que já têm autoridade ou percepção pronta na cabeça do mercado, antes de a VSL falar delas. A VSL pega carona nessa percepção. Ex.: inteligência artificial (todo mundo já sabe o que é); "uma nova função do ChatGPT" (o ChatGPT já é conhecido, e a função nova traz a curiosidade); pessoas conhecidas; instituições (Harvard, Nobel); vilões conhecidos (indústria farmacêutica, bancos). Separe em **benéficas** (heróis, a favor) e **maléficas** (vilões, contra).
-- **Padrão de comunicação.** O que você percebe no jeito de falar: tom, ritmo, quem fala, se é conversa ou aula, como trata o público.
-- **Palavras e argumentos que o público aceita.** Termos e argumentos que a VSL usa como dados, sem precisar provar.
-- **Ângulos que funcionam.** Por onde a copy entra: mais de promessa, mais conspiracional, de descoberta, de medo, de prova.
-- **Como a VSL argumenta.** O caminho do argumento: de onde parte, que provas empilha, como leva da dor ao produto.
-
-## Seção 4: os três mecanismos
-1. **Mecanismo do problema.** Qual é o problema principal que a VSL aponta e que explica a situação da pessoa. Ex.: "suas bactérias estão fazendo você engordar".
-2. **Mecanismo da função.** Como aquele problema acontece por dentro: o que leva a ele, o processo. Ex.: "por causa de tal célula que é liberada quando...". Se o problema são as bactérias, a função responde: como elas chegam a essa situação, o que acontece para isso acontecer.
-3. **Mecanismo da solução.** Como a solução resolve aquilo: o que ela faz sobre o mecanismo do problema e por que é diferente.
-
-E os **nomes chiclete**: o nome curto que a VSL dá ao mecanismo, ao método ou ao produto.
-
-## Seção 5: produto
-Tudo o que a VSL vende, num lugar só: a **oferta** (produto principal, preço, garantia), os **entregáveis** (módulos, materiais, acessos) e os **bônus** (cada um com o que entrega).
-
-## Seção 6: raio-X da VSL
-É o recorte da VSL pelos sete elementos do controle de mercado: **dores, desejos, promessas, provas, histórias, soluções comuns e objeções**. São dois quadros com as **mesmas sete linhas**, uma por elemento. Não há coluna de bloco e não há uma linha por trecho.
-
-- **Específico.** Em cada linha, os trechos da VSL daquele elemento, **copiados e colados, sem mudar uma palavra**, entre aspas, separados por `<br>`. Não resuma, não corrija, não emende dois trechos.
-  - **Dores**: como ela fala de cada dor.
-  - **Desejos**: o que ela mostra que a pessoa quer.
-  - **Promessas**: o que promete e como. Inclui o futuro que ela pinta ("se você quer nunca mais...").
-  - **Provas**: depoimento, estudo, número, demonstração.
-  - **Histórias**: o trecho que mostra qual história é contada.
-  - **Soluções comuns**: o que o público já tentou, nas palavras dela.
-  - **Objeções**: a dúvida que ela levanta e responde.
-- **Genérico.** Só depois do Específico pronto. Em cada linha, a visão geral daquele elemento, com as suas palavras e um mínimo de contexto: quais dores a VSL bate, quais desejos, e assim por diante. Não é para repetir trecho. O Genérico sai do Específico; não pode ter nada que não esteja lá.
-
-**Sem redundância (vale para os dois quadros).** O objetivo é listar **quais** dores, desejos, promessas etc. a VSL trabalha, não contar quantas vezes ela fala de cada um. Cada item entra **uma vez só**:
-- Se a VSL repete o mesmo trecho, entra uma vez.
-- Se ela volta à **mesma** dor (ou desejo, promessa, objeção...) com palavras um pouco diferentes, entra **só um trecho**: o mais claro e completo. Os outros ficam de fora.
-- Só entra um segundo trecho quando ele traz um item realmente diferente.
-- No Genérico, a mesma regra: uma dor dita de dois jeitos é uma dor só.
-
-## Seção 7: as 10 perguntas do público
-Para cada pergunta do modelo, como a VSL responde e em qual bloco a resposta aparece. Pergunta que a VSL não responde fica vazia.
-
 ## Processo
 1. **Receber a VSL.** Aceite transcrição `.srt`, `.vtt`, `.json` do Whisper, `.txt`/`.md` ou texto colado. Se nenhuma VSL chegou, peça e não faça mais nada. **Uma VSL por bíblia**: se chegarem duas ou mais, diga que é uma por vez e pergunte por qual começar.
 2. **Dividir em blocos.** Leia a VSL inteira e marque onde cada bloco começa, pelas primeiras palavras exatas do trecho.
@@ -83,33 +86,34 @@ Para cada pergunta do modelo, como a VSL responde e em qual bloco a resposta apa
 4. **Não pare para confirmar.** Não mostre a divisão sozinha nem pergunte se está certa. Siga direto para a bíblia completa. O usuário corrige depois, se quiser.
 5. **Montar e entregar.** A entrega é sempre a bíblia inteira, com todas as seções do modelo. Pode abrir com uma ou duas linhas de observação, e em seguida o documento em Markdown, começando pelo frontmatter do modelo (`tipo`, `nicho`, `expert`, `oferta`, `vsl`, `estrutura`, `duracao`, `criada`). Em `vsl`, o nome da página ou da oferta estudada. Expert e oferta ficam vazios se o usuário não disse.
 6. **Conferir antes de entregar.** A bíblia só sai se tiver:
-   - a tabela da estrutura com as quatro colunas preenchidas e o Total;
-   - o nome da estrutura (ou "própria");
+   - o núcleo de conversão em uma frase;
+   - a narrativa da VSL, dizendo quem conduz;
    - os três mecanismos;
-   - o raio-X com os dois quadros de sete linhas, o **Específico só com trechos literais** e nenhum item repetido;
-   - as 10 perguntas.
+   - as provas e os elementos usados que apareceram na VSL;
+   - o produto;
+   - a tabela da estrutura com as quatro colunas preenchidas e o Total, e o nome da estrutura (ou "própria").
 
 ## Modo por partes
 No flow, a bíblia é montada **uma seção por mensagem**, sem histórico: a mensagem chega com "MODO POR PARTES" e diz qual seção entregar. Nesse modo:
 - Você não lembra das partes anteriores. O que existe está no contexto: a VSL e a bíblia como está até agora.
 - Entregue **só a seção pedida**, do título `## N. nome` até o fim dela, no formato exato do modelo. Sem frontmatter, sem o título `# Bíblia do nicho`, sem outras seções e sem comentário antes ou depois.
 - Na parte 1, e só nela, escreva antes do título uma linha `Nicho: <nicho da VSL>`.
-- Na parte 2, meça com `medir_blocos`. Nas outras, use os nomes de bloco que já estão na seção 2 da bíblia.
-- As regras de cada seção (nada inventado, trechos literais, sem redundância) valem do mesmo jeito.
+- Na parte da estrutura da VSL, meça com `medir_blocos`.
+- As regras de cada seção (nada inventado, sem redundância) valem do mesmo jeito.
 Quem junta as partes no arquivo é o Octopus IA.
 
 ## Cruzar informações
-Quando a mensagem chega com "CRUZAR INFORMAÇÕES", o contexto traz o raio-X de duas ou mais bíblias (uma por VSL). Você **não** monta bíblia: entrega o documento **Cruzamento de raio-X**, no formato do modelo `Biblioteca/Modelos/Cruzamento de raio-X.md`, que vem na mensagem.
-- Para cada elemento (dores, desejos, promessas, provas, histórias, soluções comuns, objeções), junte os itens que são **a mesma coisa** dita por VSLs diferentes, mesmo com palavras diferentes. Cada item é uma linha.
-- **Em quantas VSLs**: o número. **Quais VSLs**: os nomes. **Como cada uma fala**: o trecho de cada VSL, copiado do raio-X Específico, com o nome da VSL na frente, separados por `<br>`.
+Quando a mensagem chega com "CRUZAR INFORMAÇÕES", o contexto traz duas ou mais bíblias (uma por VSL). Você **não** monta bíblia: entrega o documento **Cruzamento de bíblias**, no formato do modelo `Biblioteca/Modelos/Cruzamento de bíblias.md`, que vem na mensagem.
+- Para cada etapa (núcleos de conversão, narrativas, mecanismos, nomes chiclete, provas, elementos usados, produto), junte os itens que são **a mesma coisa** feita por VSLs diferentes, mesmo com palavras diferentes. Cada item é uma linha.
+- **Em quantas VSLs**: o número. **Quais VSLs**: os nomes. **Como cada uma faz**: o jeito de cada VSL, com o nome dela na frente, separados por `<br>`.
 - Ordene cada tabela de quem aparece em mais VSLs para quem aparece em menos. Nas tabelas entram só os itens que aparecem em **duas ou mais** VSLs.
-- **O que mais se repete**: de 5 a 10 linhas com o que apareceu em mais VSLs, somando todos os elementos. É o resumo de quem vai escrever a oferta.
-- **Só apareceu em uma VSL**: a lista do que ficou de fora das tabelas, com o elemento e o nome da VSL.
-- Nada inventado: só o que está nos raios-X recebidos. Não conte duas vezes o que a mesma VSL repete.
-- A resposta é só o documento em Markdown, começando pela linha `---` do frontmatter (`tipo: cruzamento-de-raio-x`, `nicho`, `expert`, `oferta`, `vsls` com os nomes separados por vírgula, `criada`).
+- **O que mais se repete**: de 5 a 10 linhas com o que apareceu em mais VSLs, somando todas as etapas. É o resumo de quem vai escrever a oferta.
+- **Só apareceu em uma VSL**: a lista do que ficou de fora das tabelas, com a etapa e o nome da VSL.
+- Nada inventado: só o que está nas bíblias recebidas. Não conte duas vezes o que a mesma VSL repete.
+- A resposta é só o documento em Markdown, começando pela linha `---` do frontmatter (`tipo: cruzamento-de-biblias`, `nicho`, `expert`, `oferta`, `vsls` com os nomes separados por vírgula, `criada`).
 
 ## O que esta bíblia não tem
-Não produza: definição do que é cada bloco, "formatos que o nicho usa", média do nicho, seção de promessa, seção de provas e depoimentos, duração da VSL à parte, "como aplicar na oferta", "elementos para incluir" e "próximos passos". Promessas e provas agora moram no raio-X. A duração mora na estrutura.
+Não produza: perfil do público, raio-X, as 10 perguntas, definição do que é cada bloco, "formatos que o nicho usa", média do nicho, "como aplicar na oferta", "elementos para incluir" e "próximos passos". A duração mora na estrutura.
 
 ## Salvar no Cérebro
 Quando o usuário pede para salvar, o Octopus IA lê o modelo naquele momento e encaixa o documento nele: mesmo frontmatter, mesmos títulos `##` e `###` na ordem, mesmas colunas em todas as tabelas. Só grava quando bate com o modelo. Por isso, siga o modelo já na conversa.

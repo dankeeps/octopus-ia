@@ -2,8 +2,9 @@
 tipo: "indice"
 ---
 
-
 # Narrativas
+
+**Use primeiro as notas desta pasta:** são as validadas, com exemplos reais e recentes. As da subpasta "Não atualizadas" continuam disponíveis para quando nenhuma validada servir.
 
 A narrativa é a **condução** até a big idea — não a ideia. A mesma big idea
 aguenta várias narrativas; escolha pelo trabalho que o anúncio precisa fazer.
@@ -15,7 +16,6 @@ a espinha de um, uma batida de outro, e corta o que não serve à oferta.
 começa em 32, como nota nova nesta pasta e uma linha no grupo certo abaixo.
 
 Abra **só a nota da narrativa escolhida**.
-
 
 ## Transferir a culpa
 
@@ -61,7 +61,7 @@ O trabalho: fazer o cético acreditar que é possível pra ele.
 
 O trabalho: fazer a pessoa sentir que o anúncio foi feito para ela. Em pago, essas narrativas quase sempre precisam de enxerto de prova.
 
-- [[05 Leitura Mental com Foco no Problema|5. Leitura Mental com Foco no Problema]] — você consegue descrever a dor com detalhe que só quem vive conhece.
+- [[05 Leitura Mental|5. Leitura Mental]] — você consegue descrever a dor com detalhe que só quem vive conhece.
 - [[06 Leitura Mental com Foco na Solução|6. Leitura Mental com Foco na Solução]] — você tem uma dica boa o bastante para entregar de graça.
 - [[10 Coisas Que Toda Pessoa com Essas Características Deve Fazer|10. Coisas Que Toda Pessoa com Essas Características Deve Fazer]] — existe um traço que o público usa para se descrever.
 - [[03 História que Conecta|3. História que Conecta]] — o argumento é difícil de aceitar de frente e a metáfora entra por baixo da defesa.
@@ -70,8 +70,6 @@ O trabalho: fazer a pessoa sentir que o anúncio foi feito para ela. Em pago, es
 - [[29 Mini Vlog|29. Mini Vlog]] — o processo é interessante de assistir por si só.
 
 ## Projeção e comparação
-
-
 
 - [[22 Futuro Incrível|22. Futuro Incrível]] — dá para colocar número em cima de uma decisão que ele adiou.
 - [[25 A Comparação Curiosa|25. A Comparação Curiosa]] — a escolha óbvia do público é a errada, e a explicação disso é o próprio mecanismo.
@@ -85,13 +83,15 @@ O trabalho: fazer a pessoa sentir que o anúncio foi feito para ela. Em pago, es
 | Ele já tentou e falhou | Erro Terrível, Jeito Errado vs Certo, Faça Isso ao Invés |
 | Ele acha que não tem o que precisa | Desejo Facilitado, Você Tem? Então Você Pode |
 | Ele não acredita mais em promessa | É Possível Ter Esse Resultado?, Comparação Curiosa |
-| Ele não sabe que tem o problema | Leitura Mental com Foco no Problema |
+| Ele não sabe que tem o problema | Leitura Mental |
 | Ele sabe tudo e não age | Futuro Incrível, Você Não é Capaz |
 | O clique vai pra um quiz | O Grande Teste, Saindo da Encruzilhada |
 | A oferta é aula gratuita | Mapa do Tesouro Incompleto |
 | Você tem caso forte e nada mais | Estudo de Caso, O Plano Infalível |
 
-
 ## Acrescentadas
+
+- [[33 Desafio|33. Desafio]] — o público já tentou de tudo e desconfia de promessa; o expert banca o resultado com uma aposta pessoal e o clique vira o aceite do desafio.
+- [[34 Depoimento|34. Depoimento]] — uma pessoa comum conta a própria saga com o problema até achar a saída; o público se vê nela antes de ouvir falar do método.
 
 _As notas ligadas a esta aparecem nas ligações dela, no Cérebro do Octopus IA._

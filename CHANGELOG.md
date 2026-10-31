@@ -1,5 +1,12 @@
 # O que mudou
 
+## 1.1.0
+- Bíblia e Briefing de tese agora têm as mesmas 8 etapas: núcleo de conversão, narrativa da VSL, mecanismo, nome chiclete, provas, elementos usados, produto e estrutura da VSL. Na bíblia, a IA preenche a partir da VSL do concorrente. No briefing, você responde cada etapa e ela sugere o equivalente.
+- Narrativas, formatos e ângulos validados chegaram à Biblioteca e têm prioridade. Os anteriores continuam disponíveis na subpasta "Não atualizadas" (ou "Não atualizados"), e os agentes só vão até eles quando nenhum validado servir ou quando você pedir.
+- "Cruzar informações" agora cruza as bíblias inteiras (modelo Cruzamento de bíblias).
+- Anúncios: novas métricas de tráfego (CPM e conversão do checkout) e de VSL (play rate, retenção no primeiro minuto, retenção até o pitch e conversão).
+- Suas notas continuam onde estão. O que foi trocado na Biblioteca fica guardado na lixeira do Octopus IA.
+
 ## 1.0.4
 - Login do ChatGPT: o Codex agora recebe o proxy e os certificados da rede do computador (empresa, VPN, antivírus). Isso resolve o erro "token_exchange_failed" ao entrar com a conta.
 

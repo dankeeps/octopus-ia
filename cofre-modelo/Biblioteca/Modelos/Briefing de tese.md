@@ -8,19 +8,31 @@ criada: "{{date}}"
 ---
 # Briefing de tese
 
-## One Belief
-> [!tip] Fórmula
-> "Esta nova **oportunidade** é a chave para ele satisfazer seu **desejo** e só é alcançável através do meu novo **mecanismo**."
+## Núcleo de conversão
 
-- **Nova oportunidade:** 
-- **Desejo:** 
-- **Novo mecanismo:** 
+### Núcleo escolhido
+- **O núcleo, em uma frase:** 
+- **O que a pessoa já vive:** 
+- **O que ela já suspeita ou já sente:** 
+- **O que ela quer:** 
+- **A explicação que a VSL liga a isso:** 
 
-**One Belief:** 
+### Opções das bíblias
+| Núcleo | De qual bíblia | Observação |
+|---|---|---|
+|  |  |  |
 
-## Sobre o expert
+## Narrativa da VSL
+
+### Narrativa escolhida
+- **Quem conduz a VSL:** 
+- **O que a VSL é, como um todo:** 
+- **Tem história? Qual:** 
+- **Por que o público acredita nessa pessoa:** 
+
+### Sobre o expert
 > [!note] Escrito pelo próprio expert
-> As respostas do expert, com as palavras dele. É daqui que a VSL tira a apresentação e as histórias: nada aqui é inventado.
+> As respostas do expert, com as palavras dele. É daqui que a VSL tira a apresentação e as histórias.
 
 - **Nome:** 
 - **Formação e registro:** 
@@ -34,37 +46,21 @@ criada: "{{date}}"
 |---|---|---|
 |  |  |  |
 
-## Promessas
-
-### Promessas escolhidas
-- 
-
 ### Opções das bíblias
-| Promessa | De qual bíblia | Por que funciona |
+| Narrativa | De qual bíblia | Observação |
 |---|---|---|
 |  |  |  |
 
-## Mecanismo do problema
+## Mecanismo
 
 ### Mecanismo escolhido
 - **Nome:** 
 - **Qual é o problema:** 
 - **Como o problema acontece:** 
 - **Quem ou o que é o culpado:** 
-- **De onde veio a ideia:** 
-
-### Opções das bíblias
-| Mecanismo | De qual bíblia | Observação |
-|---|---|---|
-|  |  |  |
-
-## Mecanismo da solução
-
-### Mecanismo escolhido
-- **Nome:** 
-- **Como funciona:** 
+- **Como a solução resolve:** 
 - **Por que é diferente de tudo que o público já viu:** 
-- **De onde veio a ideia:** 
+- **De onde veio cada parte:** 
 
 ### Opções das bíblias
 | Mecanismo | De qual bíblia | Observação |
@@ -89,7 +85,33 @@ criada: "{{date}}"
 ### Como pesquisar mais nomes
 - 
 
-## Oferta
+## Provas
+
+### Provas escolhidas
+| Prova | Tipo | Como a VSL usa |
+|---|---|---|
+|  |  |  |
+
+### Opções das bíblias
+| Prova | De qual bíblia | Equivalente para esta oferta |
+|---|---|---|
+|  |  |  |
+
+## Elementos usados
+
+### Elementos escolhidos
+- **Objetos e alimentos conhecidos:** 
+- **Herói:** 
+- **Padrão de comunicação:** 
+- **Ângulo:** 
+- **Como a VSL argumenta:** 
+
+### Opções das bíblias
+| Elemento | De qual bíblia | Equivalente para esta oferta |
+|---|---|---|
+|  |  |  |
+
+## Produto
 
 ### Produto principal
 - **Nome:** 
@@ -98,24 +120,22 @@ criada: "{{date}}"
 - **Preço:** 
 - **Garantia:** 
 
-### Ofertas do nicho
-| De qual bíblia | Produto principal | Preço | Garantia |
-|---|---|---|---|
-|  |  |  |  |
-
-## Bônus
-
 ### Bônus escolhidos
 | Bônus | O que entrega | Por que ajuda a vender |
 |---|---|---|
 |  |  |  |
+
+### Ofertas do nicho
+| De qual bíblia | Produto principal | Preço | Garantia |
+|---|---|---|---|
+|  |  |  |  |
 
 ### Bônus do nicho
 | De qual bíblia | Bônus | O que entrega |
 |---|---|---|
 |  |  |  |
 
-## Outline
+## Estrutura da VSL
 
 ### Estrutura das VSLs do nicho
 | De qual bíblia | Estrutura | Blocos, na ordem | Duração total |

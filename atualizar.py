@@ -5,8 +5,9 @@
     python atualizar.py --conferir   só diz se há versão nova
     python atualizar.py --forcar     reinstala mesmo que a versão seja a mesma
 
-O que é trocado: só os arquivos do programa (esta pasta). Os seus projetos, notas e a Biblioteca (pasta
-~/Octopus IA), o login do ChatGPT, as conversas e as configurações ficam fora desta pasta e não são tocados.
+O que é trocado: os arquivos do programa (esta pasta). Os seus projetos e notas (pasta ~/Octopus IA), o login do
+ChatGPT, as conversas e as configurações ficam fora desta pasta e não são tocados. Na primeira abertura depois de
+atualizar, a Biblioteca recebe as notas novas: o que você criou fica como está e o que for trocado vai para a lixeira.
 De onde vem a versão nova: o repositório público indicado em atualizacao.json.
 """
 import io

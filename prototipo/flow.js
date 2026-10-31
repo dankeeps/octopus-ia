@@ -239,7 +239,7 @@
       ['Remessa', 'Perguntada no primeiro anúncio do chat', 'Você escolhe entre continuar na última remessa ou abrir uma nova. Vale para todos os anúncios deste chat.'],
     ]],
     ['Atualizar o que já existe', [
-      ['Números do anúncio', '"O AD 12 teve hook rate 38% e hold rate 21%"', 'Grava nas propriedades do anúncio: hook rate, hold rate, CTR, gasto, faturamento, custo por início de checkout (IC) e CPA.'],
+      ['Números do anúncio', '"O AD 12 teve hook rate 38% e hold rate 21%"', 'Grava nas propriedades do anúncio. Tráfego: gasto, faturamento, hook rate, hold rate, IC, CTR, CPA, CPM e conversão do checkout. VSL: play rate, retenção do 1º minuto, retenção ao pitch e conversão.'],
       ['Fase do anúncio', '"O AD 12 já está no ar" · "o AD 09 validou"', 'Muda o status: para gravação, gravado, para edição, editado, no ar, validou, não validou.'],
       ['Melhorar um hook', '"Melhore o hook do AD 12"', 'Reescreve o hook olhando os que já validaram e os dos concorrentes.'],
     ]],
@@ -441,22 +441,24 @@
     return [...mapa.values()].sort((a, b) => a.n - b.n);
   }
   // As etapas também saem do próprio briefing pronto (uma por seção do documento): vale para briefing antigo e para quando o agente não registrou a linha
-  const ETAPAS_BRIEFING = ['Sobre o expert', 'Promessas', 'Mecanismo do problema', 'Mecanismo da solução', 'Nome chiclete', 'Oferta', 'Bônus', 'Outline', 'One Belief'];      // o One Belief é a última etapa: só fecha com o resto decidido
+  const ETAPAS_BRIEFING = ['Núcleo de conversão', 'Narrativa da VSL', 'Mecanismo', 'Nome chiclete', 'Provas', 'Elementos usados', 'Produto', 'Estrutura da VSL'];      // as mesmas etapas da bíblia
+  const ETAPAS_ANTIGAS = ['Sobre o expert', 'Promessas', 'Mecanismo do problema', 'Mecanismo da solução', 'Nome chiclete', 'Oferta', 'Bônus', 'Outline', 'One Belief'];      // briefing feito antes das etapas novas
   const FORA_DA_ESCOLHA = /^### (Opções da bíblia|Opções das bíblias|O que as bíblias pedem do expert|Estrutura das VSLs do nicho|Nomes do nicho|Sugestões|Como pesquisar mais nomes|Ofertas do nicho|Bônus do nicho)\s*$/m;
   function etapasDoDoc(doc) {
     const txt = String(doc || '').replace(/^---[\s\S]*?\n---\n/, ''), sec = {};
     txt.split(/^## /m).slice(1).forEach((b) => { const k = b.indexOf('\n'); sec[b.slice(0, k < 0 ? b.length : k).trim().toLowerCase()] = k < 0 ? '' : b.slice(k + 1); });
     const limpa = (x) => x.replace(/\*\*/g, '').replace(/^[“"]|[”"]$/g, '').trim();
     const out = [];
-    ETAPAS_BRIEFING.forEach((nome, k) => {
+    const estrutura = (n) => n === 'Estrutura da VSL' || n === 'Outline';
+    (sec['núcleo de conversão'] != null ? ETAPAS_BRIEFING : ETAPAS_ANTIGAS).forEach((nome, k) => {
       let bruto = sec[nome.toLowerCase()]; if (bruto == null) return;
-      if (nome === 'Outline') { const k = bruto.search(/^### Estrutura desta VSL\s*$/m); if (k >= 0) bruto = bruto.slice(k).replace(/^### .*\n/, ''); }       // o cartão mostra a estrutura desta VSL, não a análise das outras
+      if (estrutura(nome)) { const k = bruto.search(/^### Estrutura desta VSL\s*$/m); if (k >= 0) bruto = bruto.slice(k).replace(/^### .*\n/, ''); }       // o cartão mostra a estrutura desta VSL, não a análise das outras
       const corte = bruto.search(FORA_DA_ESCOLHA), det = (corte >= 0 ? bruto.slice(0, corte) : bruto).trim();
       const linhas = det.split('\n').map((l) => l.trim()).filter((l) => l && !l.startsWith('>') && !l.startsWith('###'));
       let esc = '';
       if (nome === 'One Belief') esc = (linhas.find((l) => /^\*\*One Belief:\*\*/i.test(l)) || '').replace(/^\*\*One Belief:\*\*/i, '');
-      else if (nome === 'Bônus') esc = linhas.filter((l) => l.startsWith('|') && !/^\|\s*-/.test(l)).slice(1).map((l) => l.split('|')[1]).filter((x) => x && x.trim()).map(limpa).join(' · ');
-      else if (nome === 'Outline') { const t = linhas.find((l) => /^\|\s*\*{0,2}Total/i.test(l)); if (t) { const c = t.split('|').map(limpa); esc = c.slice(2).filter((x) => /\d/.test(x))[0] || ''; if (esc) esc = 'Total: ' + esc; } }
+      else if (nome === 'Bônus' || nome === 'Provas') esc = linhas.filter((l) => l.startsWith('|') && !/^\|\s*-/.test(l)).slice(1).map((l) => l.split('|')[1]).filter((x) => x && x.trim()).map(limpa).join(' · ');
+      else if (estrutura(nome)) { const t = linhas.find((l) => /^\|\s*\*{0,2}Total/i.test(l)); if (t) { const c = t.split('|').map(limpa); esc = c.slice(2).filter((x) => /\d/.test(x))[0] || ''; if (esc) esc = 'Total: ' + esc; } }
       if (!esc) esc = ((linhas.find((l) => /^-\s*\*\*Nome:\*\*\s*\S/.test(l)) || '').replace(/^-\s*\*\*Nome:\*\*/, '')) || (linhas.find((l) => /^-\s+\S/.test(l)) || linhas[0] || '').replace(/^-\s+/, '');
       esc = limpa(esc);
       // aberto, o cartão mostra a seção inteira, igual à do arquivo (não um resumo)
