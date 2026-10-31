@@ -441,7 +441,7 @@
     return [...mapa.values()].sort((a, b) => a.n - b.n);
   }
   // As etapas também saem do próprio briefing pronto (uma por seção do documento): vale para briefing antigo e para quando o agente não registrou a linha
-  const ETAPAS_BRIEFING = ['Núcleo de conversão', 'Narrativa da VSL', 'Mecanismo', 'Nome chiclete', 'Provas', 'Elementos usados', 'Produto', 'Estrutura da VSL'];      // as mesmas etapas da bíblia
+  const ETAPAS_BRIEFING = ['Núcleo de conversão', 'Dores', 'Desejos', 'Promessas', 'Soluções comuns', 'Crenças', 'Objeções', 'Narrativa da VSL', 'Nome chiclete', 'Provas', 'Elementos usados', 'Produto', 'Estrutura da VSL', 'Mecanismo'];      // as mesmas etapas da bíblia
   const ETAPAS_ANTIGAS = ['Sobre o expert', 'Promessas', 'Mecanismo do problema', 'Mecanismo da solução', 'Nome chiclete', 'Oferta', 'Bônus', 'Outline', 'One Belief'];      // briefing feito antes das etapas novas
   const FORA_DA_ESCOLHA = /^### (Opções da bíblia|Opções das bíblias|O que as bíblias pedem do expert|Estrutura das VSLs do nicho|Nomes do nicho|Sugestões|Como pesquisar mais nomes|Ofertas do nicho|Bônus do nicho)\s*$/m;
   function etapasDoDoc(doc) {
@@ -457,7 +457,7 @@
       const linhas = det.split('\n').map((l) => l.trim()).filter((l) => l && !l.startsWith('>') && !l.startsWith('###'));
       let esc = '';
       if (nome === 'One Belief') esc = (linhas.find((l) => /^\*\*One Belief:\*\*/i.test(l)) || '').replace(/^\*\*One Belief:\*\*/i, '');
-      else if (nome === 'Bônus' || nome === 'Provas') esc = linhas.filter((l) => l.startsWith('|') && !/^\|\s*-/.test(l)).slice(1).map((l) => l.split('|')[1]).filter((x) => x && x.trim()).map(limpa).join(' · ');
+      else if (['Bônus', 'Provas', 'Crenças', 'Objeções'].includes(nome)) esc = linhas.filter((l) => l.startsWith('|') && !/^\|\s*-/.test(l)).slice(1).map((l) => l.split('|')[1]).filter((x) => x && x.trim()).map(limpa).join(' · ');
       else if (estrutura(nome)) { const t = linhas.find((l) => /^\|\s*\*{0,2}Total/i.test(l)); if (t) { const c = t.split('|').map(limpa); esc = c.slice(2).filter((x) => /\d/.test(x))[0] || ''; if (esc) esc = 'Total: ' + esc; } }
       if (!esc) esc = ((linhas.find((l) => /^-\s*\*\*Nome:\*\*\s*\S/.test(l)) || '').replace(/^-\s*\*\*Nome:\*\*/, '')) || (linhas.find((l) => /^-\s+\S/.test(l)) || linhas[0] || '').replace(/^-\s+/, '');
       esc = limpa(esc);

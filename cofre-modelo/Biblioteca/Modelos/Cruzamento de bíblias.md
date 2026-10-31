@@ -24,35 +24,65 @@ criada: "{{date}}"
 |---|---|---|---|
 |  |  |  |  |
 
-## 4. Narrativas
+## 4. Dores
+| Dor | Em quantas VSLs | Quais VSLs | Como cada uma fala |
+|---|---|---|---|
+|  |  |  |  |
+
+## 5. Desejos
+| Desejo | Em quantas VSLs | Quais VSLs | Como cada uma fala |
+|---|---|---|---|
+|  |  |  |  |
+
+## 6. Promessas
+| Promessa | Em quantas VSLs | Quais VSLs | Como cada uma fala |
+|---|---|---|---|
+|  |  |  |  |
+
+## 7. Soluções comuns
+| Solução comum | Em quantas VSLs | Quais VSLs | Como cada uma fala |
+|---|---|---|---|
+|  |  |  |  |
+
+## 8. Crenças
+| Crença | Em quantas VSLs | Quais VSLs | Como cada uma fala |
+|---|---|---|---|
+|  |  |  |  |
+
+## 9. Objeções
+| Objeção | Em quantas VSLs | Quais VSLs | Como cada uma fala |
+|---|---|---|---|
+|  |  |  |  |
+
+## 10. Narrativas
 | Narrativa | Em quantas VSLs | Quais VSLs | Como cada uma faz |
 |---|---|---|---|
 |  |  |  |  |
 
-## 5. Mecanismos
-| Mecanismo | Em quantas VSLs | Quais VSLs | Como cada uma faz |
-|---|---|---|---|
-|  |  |  |  |
-
-## 6. Nomes chiclete
+## 11. Nomes chiclete
 | Nome | Em quantas VSLs | Quais VSLs | Como cada uma faz |
 |---|---|---|---|
 |  |  |  |  |
 
-## 7. Provas
+## 12. Provas
 | Prova | Em quantas VSLs | Quais VSLs | Como cada uma faz |
 |---|---|---|---|
 |  |  |  |  |
 
-## 8. Elementos usados
+## 13. Elementos usados
 | Elemento | Em quantas VSLs | Quais VSLs | Como cada uma faz |
 |---|---|---|---|
 |  |  |  |  |
 
-## 9. Produto
+## 14. Produto
 | Item | Em quantas VSLs | Quais VSLs | Como cada uma faz |
 |---|---|---|---|
 |  |  |  |  |
 
-## 10. Só apareceu em uma VSL
+## 15. Mecanismos
+| Mecanismo | Em quantas VSLs | Quais VSLs | Como cada uma faz |
+|---|---|---|---|
+|  |  |  |  |
+
+## 16. Só apareceu em uma VSL
 - 

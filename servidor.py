@@ -143,7 +143,7 @@ def _formatos_em_dia(v):
 
 NAO_ATUALIZADAS = {"Narrativas": "Não atualizadas", "Ângulos": "Não atualizados"}      # o que continua disponível, atrás das validadas
 SAIRAM = {"Narrativas": ["05 Leitura Mental com Foco no Problema.md"], "Modelos": ["Cruzamento de raio-X.md"]}      # trocadas por outra nota
-MODELOS_TROCADOS = ["Anúncio.md", "Bíblia do nicho.md", "Briefing de tese.md", "Formato.md", "Narrativa.md", "Ângulo.md"]
+MODELOS_TROCADOS = ["Anúncio.md", "Bíblia do nicho.md", "Briefing de tese.md", "Cruzamento de bíblias.md", "Formato.md", "Narrativa.md", "Ângulo.md"]
 
 
 def _biblioteca_em_dia(v):

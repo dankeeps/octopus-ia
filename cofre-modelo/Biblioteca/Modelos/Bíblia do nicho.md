@@ -11,7 +11,7 @@ criada: "{{date}}"
 # Bíblia do nicho
 
 > [!info] Para que serve
-> Cada bíblia é o estudo de **uma VSL** que escala no nicho: por que ela converte, quem conduz, o mecanismo, o nome chiclete, as provas, os elementos usados, o produto e a estrutura. O agente **Bíblia do nicho** preenche este modelo a partir da VSL que você manda. Nada aqui é inventado: tudo sai da VSL. O Briefing de tese tem estas mesmas etapas.
+> Cada bíblia é o estudo de **uma VSL** que escala no nicho: por que ela converte, o que ela fala para o público, quem conduz, o que prova, o que usa, o que vende, como é montada e o mecanismo. O agente **Bíblia do nicho** preenche este modelo a partir da VSL que você manda. Nada aqui é inventado: tudo sai da VSL. O Briefing de tese tem estas mesmas etapas.
 
 ## 1. Núcleo de conversão
 > [!tip] O que é
@@ -23,27 +23,55 @@ criada: "{{date}}"
 - **O que ela quer:** 
 - **A explicação que a VSL liga a isso:** 
 
-## 2. Narrativa da VSL
-> [!tip] O que é
-> Quem conduz a VSL e o que ela é, como um todo. Não é necessariamente uma história: pode ser a mulher que tentou de tudo até achar a saída, ou o especialista que desenvolveu um método próprio.
+## 2. Dores
+> [!tip] Como preencher
+> Uma linha por dor, com o trecho copiado da VSL, sem mudar uma palavra. Cada item entra uma vez só. Vale também para desejos, promessas, soluções comuns, crenças e objeções.
 
+| Dor | Trecho da VSL |
+|---|---|
+|  |  |
+
+## 3. Desejos
+
+| Desejo | Trecho da VSL |
+|---|---|
+|  |  |
+
+## 4. Promessas
+
+| Promessa | Trecho da VSL |
+|---|---|
+|  |  |
+
+## 5. Soluções comuns
+
+| Solução comum | Trecho da VSL |
+|---|---|
+|  |  |
+
+## 6. Crenças
+
+| Crença | Trecho da VSL | O que a VSL faz com ela |
+|---|---|---|
+|  |  |  |
+
+## 7. Objeções
+
+| Objeção | Trecho da VSL |
+|---|---|
+|  |  |
+
+## 8. Narrativa da VSL
+> [!tip] O que é
+> Quem conduz a VSL e o que ela é, como um todo. Pode ser uma jornada do herói ou um guru com método próprio. Não é necessariamente uma história.
+
+- **Tipo de narrativa:** 
 - **Quem conduz a VSL:** 
 - **O que a VSL é, como um todo:** 
 - **Tem história? Qual:** 
 - **Por que o público acredita nessa pessoa:** 
 
-## 3. Mecanismo
-
-### Mecanismo do problema
-- 
-
-### Mecanismo da função
-- 
-
-### Mecanismo da solução
-- 
-
-## 4. Nome chiclete
+## 9. Nome chiclete
 > [!tip] O que é
 > Nome curto e fácil de lembrar que a VSL dá ao mecanismo, ao método ou ao produto: "esse novo sistema XYZ", "esse truque", "essa receitinha". Pode ter ou não. É o que o público repete depois de ver a VSL.
 
@@ -51,33 +79,32 @@ criada: "{{date}}"
 |---|---|---|
 |  |  |  |
 
-## 5. Provas
+## 10. Provas
 
 | Prova | Tipo | Como a VSL usa |
 |---|---|---|
 |  |  |  |
 
-## 6. Elementos usados
+## 11. Elementos usados
 
-### Objetos e alimentos conhecidos
+### Superestruturas
 > [!tip] O que é
-> Algo que a audiência já conhece e que a VSL usa como carona. Ex.: o truque do ovo.
+> Coisas que a audiência já conhece e que a VSL usa como carona. Ex.: o truque do ovo.
 
-- 
-
-### Herói
-- 
+- **Objetos e alimentos:** 
+- **Heróis:** 
+- **Vilões:** 
 
 ### Padrão de comunicação
 - 
 
-### Ângulo
+### Ângulos
 - 
 
 ### Como a VSL argumenta
 - 
 
-## 7. Produto
+## 12. Produto
 
 ### Oferta
 | Produto principal | Preço | Garantia |
@@ -92,7 +119,7 @@ criada: "{{date}}"
 |---|---|
 |  |  |
 
-## 8. Estrutura da VSL
+## 13. Estrutura da VSL
 - **Fonte:** 
 - **Duração total:** 
 - **Estrutura:** 
@@ -100,3 +127,14 @@ criada: "{{date}}"
 | Nº | Bloco | Função | Duração estimada |
 |---|---|---|---|
 |  |  |  |  |
+
+## 14. Mecanismo
+
+### Mecanismo do problema
+- 
+
+### Mecanismo da função
+- 
+
+### Mecanismo da solução
+- 

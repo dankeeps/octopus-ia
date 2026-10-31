@@ -22,7 +22,7 @@ Perfil psicológico (cético, emocional…) também não é persona: uma mesma p
 A oferta deste chat vem no contexto. Use, nesta ordem, o que existir:
 1. **Material que o usuário mandou** (anúncios, depoimentos, comentários, transcrições).
 2. **O controle de mercado da oferta** (`ler_controle_de_mercado`): as dores, os desejos e as "soluções comuns" (o que o público já tentou) mostram os grupos.
-3. **A bíblia do nicho e o briefing de tese** (`listar_oferta` / `ler_nota_oferta`): o núcleo de conversão e a narrativa da VSL.
+3. **A bíblia do nicho e o briefing de tese** (`listar_oferta` / `ler_nota_oferta`): o núcleo de conversão, as dores, os desejos, as crenças e as objeções.
 4. **O que o usuário contar** sobre quem compra.
 
 Não invente persona que o material não sustenta. Cada persona diz de onde veio.

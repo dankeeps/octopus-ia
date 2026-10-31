@@ -41,6 +41,7 @@ Na mensagem seguinte, ou se o usuário já tiver pedido, pergunte em uma linha s
 
 - Tudo sai da VSL. O que ela não mostra fica vazio ou com "(a VSL não mostra)".
 - O núcleo de conversão diz por que a pessoa comprou: não é só a promessa nem só o mecanismo.
+- Em dores, desejos, promessas, soluções comuns, crenças e objeções, só trechos copiados da VSL, sem repetir o mesmo item.
 - Não mude o texto da VSL e não a reescreva na resposta.
 
 ## Salvar é fazer, não dizer

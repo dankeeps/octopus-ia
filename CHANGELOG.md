@@ -1,5 +1,10 @@
 # O que mudou
 
+## 1.1.1
+- Bíblia e Briefing de tese agora têm as mesmas 14 etapas: núcleo de conversão, dores, desejos, promessas, soluções comuns, crenças, objeções, narrativa da VSL, nome chiclete, provas, elementos usados, produto, estrutura da VSL e mecanismo.
+- Dores, desejos, promessas, soluções comuns, crenças e objeções trazem os trechos copiados da VSL.
+- "Cruzar informações" acompanha as 14 etapas.
+
 ## 1.1.0
 - Bíblia e Briefing de tese agora têm as mesmas 8 etapas: núcleo de conversão, narrativa da VSL, mecanismo, nome chiclete, provas, elementos usados, produto e estrutura da VSL. Na bíblia, a IA preenche a partir da VSL do concorrente. No briefing, você responde cada etapa e ela sugere o equivalente.
 - Narrativas, formatos e ângulos validados chegaram à Biblioteca e têm prioridade. Os anteriores continuam disponíveis na subpasta "Não atualizadas" (ou "Não atualizados"), e os agentes só vão até eles quando nenhum validado servir ou quando você pedir.

@@ -1110,7 +1110,7 @@ const AREAS = [
  {id:'vsl', nome:'VSL', icon:'vsl', flows:true,
   agentes:[
    {id:'biblia', nome:'Bíblia da VSL', papel:'Estudo das VSLs do nicho', anexa:true, doc:'biblia', real:true,
-    desc:'Estuda a VSL que você manda, etapa por etapa: núcleo de conversão, narrativa, mecanismo, nome chiclete, provas, elementos usados, produto e estrutura. Monta a bíblia no formato do modelo da biblioteca.',
+    desc:'Estuda a VSL que você manda, em 14 etapas, do núcleo de conversão ao mecanismo, passando por dores, desejos, promessas, crenças, objeções, narrativa, provas, produto e estrutura. Monta a bíblia no formato do modelo da biblioteca.',
     quebra:['Montar a bíblia da VSL com as VSLs ligadas neste chat'],
     grava:['VSL/Bíblia da VSL.md'],
     demandas:[
@@ -1118,7 +1118,7 @@ const AREAS = [
      ['Dividir uma VSL nos blocos com tempo e caracteres','transcrição da VSL','VSL/Bíblia da VSL.md'],
      ['Atualizar a bíblia com VSLs novas','bíblia existente e VSLs novas','VSL/Bíblia da VSL.md']]},
    {id:'briefing', nome:'Briefing de tese', papel:'Tese a partir da bíblia', anexa:true, doc:'briefing', real:true,
-    desc:'Tem as mesmas etapas da bíblia: você responde cada uma e ele sugere o equivalente ao que as VSLs do nicho fazem, do núcleo de conversão à estrutura da VSL.',
+    desc:'Tem as mesmas 14 etapas da bíblia: você responde cada uma e ele sugere o equivalente ao que as VSLs do nicho fazem, do núcleo de conversão ao mecanismo.',
     quebra:['Montar o briefing de tese com as bíblias carregadas','Sugerir nomes chiclete para o meu mecanismo'],
     grava:['VSL/Briefing de tese.md'],
     demandas:[
@@ -2533,7 +2533,7 @@ function contextoDoNo(id){
   return out;
 }
 /* ---- Bíblia da VSL por partes: uma seção do modelo por mensagem, sem histórico. As partes ficam guardadas no nó da VSL e o app monta o arquivo ---- */
-const BIB_PADRAO=['Núcleo de conversão','Narrativa da VSL','Mecanismo','Nome chiclete','Provas','Elementos usados','Produto','Estrutura da VSL'];
+const BIB_PADRAO=['Núcleo de conversão','Dores','Desejos','Promessas','Soluções comuns','Crenças','Objeções','Narrativa da VSL','Nome chiclete','Provas','Elementos usados','Produto','Estrutura da VSL','Mecanismo'];
 function bibEtapas(){
   if(!S.bibModelo&&!S.bibModeloPedido&&S.servidor){ S.bibModeloPedido=true;
     fetch('/api/nota?caminho='+encodeURIComponent('Biblioteca/Modelos/Bíblia do nicho.md'),{headers:API,cache:'no-store'}).then(r=>r.ok?r.json():null).then(n=>{ const e=n?[...n.corpo.matchAll(/^## (\d+)\. (.+)$/gm)].map(m=>m[2].trim()):[]; if(e.length) S.bibModelo=e; if(window.AtlasFlow) AtlasFlow.refresh(); }).catch(()=>{}); }
@@ -2559,7 +2559,7 @@ const TR_CACHE={sinc:{},texto:{}};
 /* Briefing de tese: UM arquivo só, alimentado a cada etapa. Quando o usuário aprova uma etapa, o agente entrega a seção dela pronta,
    entre <secao> e </secao>. O Octopus IA tira a seção da mensagem e cola no arquivo do briefing (na ordem do modelo). Ninguém reescreve
    o documento no fim: o arquivo é a soma das seções aprovadas, e é dele que saem os cartões de etapa ao lado do chat */
-const BRI_ORDEM=['núcleo de conversão','narrativa da vsl','mecanismo','nome chiclete','provas','elementos usados','produto','estrutura da vsl'];
+const BRI_ORDEM=['núcleo de conversão','dores','desejos','promessas','soluções comuns','crenças','objeções','narrativa da vsl','nome chiclete','provas','elementos usados','produto','estrutura da vsl','mecanismo'];
 function briJuntar(c,meta){
   let achou=false, ult=-1;
   (c.msgs||[]).forEach((m,i)=>{ if(m.r!=='bot'||m.stream||!m.t) { if(m.docBri) ult=Math.max(ult,i); return; }
@@ -2635,7 +2635,7 @@ function bibliasDoFlow(chatId){
   const f=flowAtual(), out=[], miolo=doc=>String(doc).replace(/^---[\s\S]*?\n---\n/,'').replace(/^## \d+\. Estrutura da VSL[^\n]*\n[\s\S]*?(?=^## |(?![\s\S]))/m,'').trim();
   (f.nodes||[]).filter(n=>n.type==='vsl').forEach(n=>{ const e=bibEstado(n); if(e.feitas<e.total) return; const doc=bibMontar(n,e.partes); out.push({nome:n.data.nome||'VSL',texto:miolo(doc),estrutura:fmCampo(doc,'estrutura')||'',duracao:fmCampo(doc,'duracao')||''}); });
   const vistos=new Set(out.map(x=>x.nome));
-  ((convsDoNo(chatId)[0]||{msgs:[]}).msgs).slice().reverse().forEach(m=>{ if(!m.doc||m.docTipo!=='biblia'||!/^## 7\. /m.test(m.doc)) return; const nome=fmCampo(m.doc,'vsl')||fmCampo(m.doc,'nicho')||'Bíblia'; if(vistos.has(nome)) return; vistos.add(nome); out.push({nome,texto:miolo(m.doc),estrutura:fmCampo(m.doc,'estrutura')||'',duracao:fmCampo(m.doc,'duracao')||''}); });
+  ((convsDoNo(chatId)[0]||{msgs:[]}).msgs).slice().reverse().forEach(m=>{ if(!m.doc||m.docTipo!=='biblia'||!/^## (?:14\. |7\. As 10 perguntas)/m.test(m.doc)) return; const nome=fmCampo(m.doc,'vsl')||fmCampo(m.doc,'nicho')||'Bíblia'; if(vistos.has(nome)) return; vistos.add(nome); out.push({nome,texto:miolo(m.doc),estrutura:fmCampo(m.doc,'estrutura')||'',duracao:fmCampo(m.doc,'duracao')||''}); });
   return out;
 }
 async function cruzarBiblias(chatId){

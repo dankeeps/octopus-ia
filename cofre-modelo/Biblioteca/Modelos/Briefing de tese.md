@@ -22,9 +22,74 @@ criada: "{{date}}"
 |---|---|---|
 |  |  |  |
 
+## Dores
+
+### Dores escolhidas
+- 
+
+### Opções das bíblias
+| Dor | De qual bíblia | Como a VSL fala |
+|---|---|---|
+|  |  |  |
+
+## Desejos
+
+### Desejos escolhidos
+- 
+
+### Opções das bíblias
+| Desejo | De qual bíblia | Como a VSL fala |
+|---|---|---|
+|  |  |  |
+
+## Promessas
+
+### Promessas escolhidas
+- 
+
+### Opções das bíblias
+| Promessa | De qual bíblia | Como a VSL fala |
+|---|---|---|
+|  |  |  |
+
+## Soluções comuns
+
+### Soluções comuns escolhidas
+- 
+
+### Opções das bíblias
+| Solução comum | De qual bíblia | Como a VSL fala |
+|---|---|---|
+|  |  |  |
+
+## Crenças
+
+### Crenças escolhidas
+| Crença | O que a nossa VSL faz com ela |
+|---|---|
+|  |  |
+
+### Opções das bíblias
+| Crença | De qual bíblia | O que a VSL faz com ela |
+|---|---|---|
+|  |  |  |
+
+## Objeções
+
+### Objeções escolhidas
+| Objeção | Como a nossa VSL responde |
+|---|---|
+|  |  |
+
+### Opções das bíblias
+| Objeção | De qual bíblia | Como a VSL responde |
+|---|---|---|
+|  |  |  |
+
 ## Narrativa da VSL
 
 ### Narrativa escolhida
+- **Tipo de narrativa:** 
 - **Quem conduz a VSL:** 
 - **O que a VSL é, como um todo:** 
 - **Tem história? Qual:** 
@@ -48,22 +113,6 @@ criada: "{{date}}"
 
 ### Opções das bíblias
 | Narrativa | De qual bíblia | Observação |
-|---|---|---|
-|  |  |  |
-
-## Mecanismo
-
-### Mecanismo escolhido
-- **Nome:** 
-- **Qual é o problema:** 
-- **Como o problema acontece:** 
-- **Quem ou o que é o culpado:** 
-- **Como a solução resolve:** 
-- **Por que é diferente de tudo que o público já viu:** 
-- **De onde veio cada parte:** 
-
-### Opções das bíblias
-| Mecanismo | De qual bíblia | Observação |
 |---|---|---|
 |  |  |  |
 
@@ -100,10 +149,11 @@ criada: "{{date}}"
 ## Elementos usados
 
 ### Elementos escolhidos
-- **Objetos e alimentos conhecidos:** 
-- **Herói:** 
+- **Objetos e alimentos:** 
+- **Heróis:** 
+- **Vilões:** 
 - **Padrão de comunicação:** 
-- **Ângulo:** 
+- **Ângulos:** 
 - **Como a VSL argumenta:** 
 
 ### Opções das bíblias
@@ -147,3 +197,19 @@ criada: "{{date}}"
 |---|---|---|---|---|---|---|
 |  |  |  |  |  |  |  |
 | **Total** |  |  |  |  |  |  |
+
+## Mecanismo
+
+### Mecanismo escolhido
+- **Nome:** 
+- **Qual é o problema:** 
+- **Como o problema acontece:** 
+- **Quem ou o que é o culpado:** 
+- **Como a solução resolve:** 
+- **Por que é diferente de tudo que o público já viu:** 
+- **De onde veio cada parte:** 
+
+### Opções das bíblias
+| Mecanismo | De qual bíblia | Observação |
+|---|---|---|
+|  |  |  |
