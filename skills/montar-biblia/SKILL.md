@@ -40,7 +40,7 @@ Na mensagem seguinte, ou se o usuário já tiver pedido, pergunte em uma linha s
 ## Regras
 
 - Tudo sai da VSL. O que ela não mostra fica vazio ou com "(a VSL não mostra)".
-- O núcleo de conversão diz por que a pessoa comprou: não é só a promessa nem só o mecanismo.
+- O núcleo de conversão é uma frase só, com a principal dor e como ela se resolve.
 - Em dores, desejos, promessas, soluções comuns, crenças e objeções, só trechos copiados da VSL, sem repetir o mesmo item.
 - Não mude o texto da VSL e não a reescreva na resposta.
 

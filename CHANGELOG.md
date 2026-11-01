@@ -2,6 +2,7 @@
 
 ## 1.1.1
 - Bíblia e Briefing de tese agora têm as mesmas 14 etapas: núcleo de conversão, dores, desejos, promessas, soluções comuns, crenças, objeções, narrativa da VSL, nome chiclete, provas, elementos usados, produto, estrutura da VSL e mecanismo.
+- O núcleo de conversão é uma frase só, com a principal dor e como ela se resolve.
 - Dores, desejos, promessas, soluções comuns, crenças e objeções trazem os trechos copiados da VSL.
 - "Cruzar informações" acompanha as 14 etapas.
 

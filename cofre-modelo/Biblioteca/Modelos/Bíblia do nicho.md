@@ -15,13 +15,9 @@ criada: "{{date}}"
 
 ## 1. Núcleo de conversão
 > [!tip] O que é
-> O motivo pelo qual a VSL vendeu: a mistura de narrativa, dores e desejos que fez a pessoa comprar. Normalmente ela parte de algo que a pessoa já vive e já suspeita, e liga isso a uma explicação nova.
+> O motivo pelo qual a VSL vendeu, em uma frase só: a principal dor e como ela se resolve. É quase um One Belief, em volta da principal dor, do desejo e das promessas da VSL.
 
-- **O núcleo, em uma frase:** 
-- **O que a pessoa já vive:** 
-- **O que ela já suspeita ou já sente:** 
-- **O que ela quer:** 
-- **A explicação que a VSL liga a isso:** 
+**Núcleo de conversão:** 
 
 ## 2. Dores
 > [!tip] Como preencher

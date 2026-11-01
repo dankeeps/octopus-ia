@@ -150,11 +150,13 @@ def _biblioteca_em_dia(v):
     """Instalação dos alunos: uma vez por versão, leva à pasta de quem já tem o Octopus IA as notas validadas e os modelos novos.
     O que veio com o programa e não foi atualizado desce para a subpasta e continua disponível para os agentes. O que a
     pessoa criou fica onde está. O que é trocado vai para a lixeira, nunca é apagado."""
-    import shutil, time
+    import shutil, time, hashlib
     selo = v / "Biblioteca" / ".versao"
     try:
         versao = (RAIZ / "VERSION").read_text(encoding="utf-8").strip()
-        if selo.is_file() and selo.read_text(encoding="utf-8").strip() == versao:
+        modelos_novos = b"".join((MODELO / "Modelos" / n).read_bytes() for n in MODELOS_TROCADOS if (MODELO / "Modelos" / n).is_file())
+        marca = f"{versao} {hashlib.sha1(modelos_novos).hexdigest()[:8]}"      # modelo alterado sem mudar a versão também chega
+        if selo.is_file() and selo.read_text(encoding="utf-8").strip() == marca:
             return
     except OSError:
         return
@@ -195,7 +197,7 @@ def _biblioteca_em_dia(v):
             if f.is_file() and alvo.is_file() and alvo.read_bytes() != f.read_bytes():
                 guardar(alvo, "Modelos")
                 shutil.copy2(f, alvo)
-        selo.write_text(versao, encoding="utf-8")
+        selo.write_text(marca, encoding="utf-8")
     except OSError as e:
         print("Não deu para atualizar a Biblioteca:", e)
 

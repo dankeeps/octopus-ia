@@ -11,11 +11,7 @@ criada: "{{date}}"
 ## Núcleo de conversão
 
 ### Núcleo escolhido
-- **O núcleo, em uma frase:** 
-- **O que a pessoa já vive:** 
-- **O que ela já suspeita ou já sente:** 
-- **O que ela quer:** 
-- **A explicação que a VSL liga a isso:** 
+- 
 
 ### Opções das bíblias
 | Núcleo | De qual bíblia | Observação |

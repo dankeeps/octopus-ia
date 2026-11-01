@@ -25,13 +25,13 @@ A bíblia é o retrato do que a VSL faz para vender. Registre o que ela diz e co
 - **Medidor:** `scripts/medir_blocos.py` nesta pasta.
 
 ## Seção 1: núcleo de conversão
-É o motivo pelo qual a VSL funcionou, o centro de tudo. Não é só a promessa nem só o mecanismo: é uma mistura de narrativa, dores e desejos. Para achar, responda: **por que a pessoa comprou isso?** O que ela já vivia e já suspeitava, e que explicação a VSL ligou a isso?
+É o motivo pelo qual a VSL funcionou, o centro de tudo, escrito em **uma frase só**. A frase contempla a principal dor e como ela se resolve. É quase um One Belief, só que em volta da principal dor, do desejo e das promessas da VSL. Para achar, responda: **por que a pessoa comprou isso?** O que ela já vivia e já suspeitava, e que explicação a VSL ligou a isso?
 
-Dois exemplos do que é um núcleo de conversão:
-- **VSL de traqueamento.** Ela vendeu porque as pessoas já passavam pelo problema de ter dias bons e dias ruins no Facebook e já suspeitavam minimamente do traqueamento. A VSL liga isso à atualização do iOS, que não retém mais os dados, e explica em profundidade que o dia bom e o dia ruim são consequência de um traqueamento feito errado.
-- **VSL de viralização.** A pessoa já sente que tudo o que faz não dá certo. A VSL explica que ela flopa porque não está na lista de favoritos: existem formatos favoritos que o algoritmo privilegia, e quem souber quais são e executar tem resultado.
+Dois exemplos de núcleo de conversão:
+- **VSL de traqueamento.** As pessoas já tinham dias bons e dias ruins no Facebook e já suspeitavam minimamente do traqueamento. A VSL liga isso à atualização do iOS, que não retém mais os dados. Núcleo: "Os dias bons e ruins no Facebook são consequência de um traqueamento feito errado depois da atualização do iOS, e se resolvem quando o traqueamento é feito do jeito certo."
+- **VSL de viralização.** A pessoa já sente que tudo o que faz não dá certo. Núcleo: "Você flopa porque não está na lista de favoritos do algoritmo, e sai disso quando descobre quais são os formatos favoritos e executa."
 
-Repare no padrão: a VSL parte do que a pessoa já vive e já sente e entrega uma explicação que dá sentido a isso. Escreva o núcleo em uma frase e preencha as outras linhas do modelo.
+Repare no padrão: a VSL parte do que a pessoa já vive e já sente, dá uma explicação para isso e mostra como resolver. Escreva uma frase só, sem lista. As outras dores, desejos e promessas têm etapa própria.
 
 ## Seções 2 a 7: dores, desejos, promessas, soluções comuns, crenças e objeções
 Cada seção é uma tabela, com uma linha por item. Na primeira coluna vai o item, com as suas palavras. Em **Trecho da VSL** vai o trecho **copiado e colado, sem mudar uma palavra**, entre aspas. Não resuma, não corrija, não emende dois trechos.
@@ -103,7 +103,7 @@ A estrutura é **a desta VSL**, do jeito que ela foi construída. Não existe li
 4. **Não pare para confirmar.** Não mostre a divisão sozinha nem pergunte se está certa. Siga direto para a bíblia completa. O usuário corrige depois, se quiser.
 5. **Montar e entregar.** A entrega é sempre a bíblia inteira, com todas as seções do modelo. Pode abrir com uma ou duas linhas de observação, e em seguida o documento em Markdown, começando pelo frontmatter do modelo (`tipo`, `nicho`, `expert`, `oferta`, `vsl`, `estrutura`, `duracao`, `criada`). Em `vsl`, o nome da página ou da oferta estudada. Expert e oferta ficam vazios se o usuário não disse.
 6. **Conferir antes de entregar.** A bíblia só sai se tiver:
-   - o núcleo de conversão em uma frase;
+   - o núcleo de conversão em uma frase só, com a principal dor e como ela se resolve;
    - dores, desejos, promessas, soluções comuns, crenças e objeções **só com trechos literais** e nenhum item repetido;
    - a narrativa da VSL, com o tipo e quem conduz;
    - as provas e os elementos usados que apareceram na VSL;
